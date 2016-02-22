@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+LOCAL_BASH_COMPLETION_DIR="$HOME/local/etc/bash_completion.d"
+if [[ -d "$LOCAL_BASH_COMPLETION_DIR" ]]; then
+  for i in $LOCAL_BASH_COMPLETION_DIR/*; do
+    name="${i##*/}"
+    [[ $name != *~ ]] && [[ $name != *.bak ]] &&
+      [ \( -f $i -o -h $i \) -a -r $i ] && source $i
+  done
+fi
+
+
+USER_BASH_COMPLETION_DIR="$HOME/.bash_completion.d"
+if [[ -d "$USER_BASH_COMPLETION_DIR" ]]; then
+  for i in $USER_BASH_COMPLETION_DIR/*; do
+    name="${i##*/}"
+    [[ $name != *~ ]] && [[ $name != *.bak ]] &&
+      [ \( -f $i -o -h $i \) -a -r $i ] && source $i
+  done
+fi

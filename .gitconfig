@@ -1,0 +1,129 @@
+[user]
+	name = Alex Nicksay
+	email = nicksay@gmail.com
+
+[core]
+	excludesfile = /Users/nicksay/.gitignore
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+
+[rebase]
+	autosquash = true
+
+[push]
+	default = current
+
+[tag]
+	sort = version:refname
+
+[diff]
+	tool = opendiff
+[difftool]
+	prompt = false
+[difftool "opendiff"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\" | cat
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+
+[hub]
+	user = nicksay
+[hub "remote"]
+	upstream = origin
+	fork = nicksay
+
+[alias]
+	# Shortcuts.
+	st = status
+	br = branch
+	ci = commit
+	co = checkout
+	cb = checkout -b
+	df = diff
+	dc = diff --cached
+
+	# Diffing (see also difftool above).
+	icdiff = icdiff
+
+	# History.
+	l = log --pretty=format:'%C(yellow)%h%C(white) %an <%ae> %>|(80)%ai%Creset%n%C(bold)%w(0,4,4)%s%C(reset)%n%+b'
+	lo = log --oneline
+	ll = log --stat --pretty=full
+	lp = log -p
+	lg = !git graph
+	# -- Show the log with colors and ascii-art commit tree.
+	graph = log --graph --pretty=format:'%Cred%h%Creset %C(cyan)%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	# -- Show all committers.
+	who = shortlog -s -e --
+	# -- Show info about a person.
+	#  $1 = a name or email
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+	# -- Show info about a commit.
+	#  $1 = a ref
+	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+
+	# Working.
+	# -- Commit all changes and any new files.
+	save = !git add -A && git commit
+	# -- Commit all changes and any new files with a message.
+	#  $* = commit message words (defaults to "SAVEPOINT"); words do not have
+	#   to be quoted: `git quicksave write some code` creates a commit
+	#   with the message "add some code"
+	quicksave = "!_() { git add -A && git commit -m \"${1-SAVEPOINT} ${*:2}\"; }; _"
+	# -- Commit all changes as fixup of a previous commit.
+	#  $* = previous commit reference (defaults to HEAD)
+	fixup = "!_() { git add -A && git commit --fixup ${1-HEAD}; }; _"
+	# -- Commit all changes as squash of a previous commit.
+	#  $* = previous commit reference (defaults to HEAD)
+	squash = "!_() { git add -A && git commit --squash ${1-HEAD}; }; _"
+	# -- Resets the previous commit and keeps the changes (like "stash pop").
+	undo = reset HEAD~1 --mixed
+	# -- Commits the previously reset commit.
+	#  Can be used after undo to avoid re-writing the commit message.
+	redo = commit -C ORIG_HEAD
+	# -- Change the last commit message.
+	amend = commit -a --amend
+	# -- Deletes and starts over.
+	#  First commits all changes and new files with a placeholder that can be accessed via reflog later.
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+	# Merging.
+	# -- List all conflicts during a merge.
+	unmerged-list = !git diff --name-status --diff-filter=U | cut -f2
+	# -- Resolve all conflicts in favor the remote during a merge.
+	unmerged-theirs = !git unmerged-list | xargs git checkout --theirs
+	# -- Edit all the conflicts during a merge.
+	unmerged-edit = "!git unmerged-list | xargs ${EDITOR}"
+	# -- Add all the conflicts (after editing) during a merge.
+	unmerged-add = !git unmerged-list | xargs git add
+	# -- Cancel a merge.
+	unmerged-abort = merge --abort
+
+	# Branches and GitHub Pull Requests.
+	new = new
+	up = update
+	update = update
+	sync = sync
+	prep = prepare
+	prepare = prepare
+	export = export
+	req = hub-pull-request
+	hub-pull-request = hub-pull-request
+	tidy = tidy
+	done = done
+
+	# Misc.
+	remote-status = remote-status
+	hub-user = hub-user
+
+	# Config.
+	# -- Show these aliases.
+	show-aliases = "!_() { git config --global --get-regexp alias.*${1} | cut -d. -f2-; }; _"
+	# -- Show all commands.
+	show-commands = "!_() { compgen -c | egrep git-.*${1} | fgrep -v -- -- | sort -u | cut -c5-; }; _"
+	# -- Edit this file.
+	edit-config = config --global -e
