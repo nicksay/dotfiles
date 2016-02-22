@@ -1,0 +1,64 @@
+{
+  /*
+  **  keystroke modifiers:
+  **  ^ = ctrl    ~ = opt     $ = shift   @ = cmd
+  **
+  **  key codes:
+  **  \UF700 = up    \UF701 = down    \UF702 = left    \UF703 = right
+  **  \U007F = backspace    \UF728 = delete
+  **  \033 = escape    \UF705 = f2
+  */
+  
+  /* character & word navigation */
+  "^b" = "moveBackward:";
+  "^B" = "moveBackwardAndModifySelection:";
+  "~b" = "moveWordBackward:";
+  "~B" = "moveWordBackwardAndModifySelection:";
+  "^f" = "moveForward:";
+  "^F" = "moveForwardAndModifySelection:";
+  "~f" = "moveWordForward:";
+  "~F" = "moveWordForwardAndModifySelection:";
+
+  /* line navigation */
+  // "^a" = "moveToBeginningOfParagraph:";
+  // "^A" = "moveToBeginningOfParagraphAndModifySelection:";
+  // "^e" = "moveToEndOfParagraph:";
+  // "^E" = "moveToEndOfParagraphAndModifySelection:";
+  "^a" = "moveToBeginningOfLine:";
+  "^A" = "moveToBeginningOfLineAndModifySelection:";
+  "^e" = "moveToEndOfLine:";
+  "^E" = "moveToEndOfLineAndModifySelection:";
+  "^p" = "moveUp:";
+  "^P" = "moveUpAndModifySelection:";
+  "^n" = "moveDown:";
+  "^N" = "moveDownAndModifySelection:";
+  "@\UF702" = "moveToBeginningOfParagraph:";
+  "@\UF703" = "moveToEndOfParagraph:";
+  "$@\UF702" = "moveToBeginningOfParagraphAndModifySelection:";
+  "$@\UF703" = "moveToEndOfParagraphAndModifySelection:";
+  
+  /* page navigation */
+  "~p" = "pageUp:";
+  "~P" = "pageUpAndModifySelection:";
+  "~n" = "pageDown:";
+  "~N" = "pageDownAndModifySelection:";
+  
+  /* scrolling */
+  "^'" = "scrollLineUp:";
+  "^/" = "scrollLineDown:";
+  "^l" = "centerSelectionInVisibleArea:";
+
+  /* editing */
+  "^h" = "deleteBackward:";
+  "~h" = "deleteWordBackward:";
+  "^d" = "deleteForward:";
+  "~d" = "deleteWordForward:";
+  "^u" = "deleteToBeginningOfParagraph:";
+  "^k" = "deleteToEndOfParagraph:";
+  "^y" = "yank:";
+  "^i" = "insertTab:";
+  "^j" = "insertNewline:";
+  "^o" = ("insertNewline:", "moveBackward:");
+  "^t" = "transpose:";
+
+}
