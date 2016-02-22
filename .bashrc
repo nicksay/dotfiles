@@ -9,31 +9,15 @@
 
 # Default environment
 export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-# Extra software with higher priority custom paths
-export PATH="$HOME/.rbenv/shims:$PATH"
-# Extra software with lower priority custom paths
+# Extra locations with lower priority custom paths
 python_version=$(python -V 2>&1 | cut -c 8-10)
-export PATH="$PATH:/Developer/usr/bin:$HOME/lib/go_appengine:$HOME/lib/python/${python_version}/bin"
+export PATH="$PATH:/Developer/usr/bin:$HOME/Library/Python/${python_version}/bin"
 # Setup python environment
 export PYTHONSTARTUP="$HOME/.pystartup"
 # Setup go environment
-export GOPATH="$HOME/lib/go"
+export GOPATH="$HOME/Library/Go"
 # Setup ruby environment
-export RBENV_SHELL=bash
-command rbenv rehash 2>/dev/null
-rbenv() {
-  local cmd
-  cmd="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-  case "$cmd" in
-    rehash|shell)
-      eval "$(rbenv "sh-$cmd" "$@")";;
-    *)
-      command rbenv "$cmd" "$@";;
-  esac
-}
+eval "$(rbenv init -)"
 
 
 # Prompt customization is done below, using a custom function
