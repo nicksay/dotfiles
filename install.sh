@@ -5,6 +5,8 @@ set -e  # stop on error
 
 cd "$(dirname "$0")"
 
+git pull origin
+
 find . -mindepth 1 -type d -not -path "*.git*" \
     | cut -c 3- \
     | tr '\n' '\0' \
