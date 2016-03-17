@@ -19,5 +19,7 @@ find . -mindepth 1 -type d -not -path "*.git*" \
 rsync -avh --no-perms \
     --exclude ".git/" \
     --exclude ".DS_Store" \
+    --exclude "init" \
     --exclude "install.sh" \
+    --exclude "setup.sh" \
     . ~;
