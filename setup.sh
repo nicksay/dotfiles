@@ -21,6 +21,26 @@ fi
 # Install local files.
 ./install.sh
 
+# Do initialization from local files.
+SUBLIME_TEXT="Library/Application Support/Sublime Text 3"
+if [[ ! -e "$HOME/$SUBLIME_TEXT/Installed Packages/Package Control.sublime-package" ]]; then
+  echo "Installing package control..."
+  mkdir -p "$HOME/$SUBLIME_TEXT/Installed Packages/"
+  package_control_url="https://packagecontrol.io/Package%20Control.sublime-package"
+  curl -sL "$package_control_url" -o "$HOME/$SUBLIME_TEXT/Installed Packages/Package Control.sublime-package"
+  echo "Package control installed."
+else
+  echo "Package control already installed."
+fi
+if [[ ! -e "$HOME/$SUBLIME_TEXT/Packages/User/Package Control.sublime-settings" ]]; then
+  echo "Installing package control settings..."
+  mkdir -p "$HOME/$SUBLIME_TEXT/Packages/User/"
+  cp "init/Package Control.sublime-settings" "$HOME/$SUBLIME_TEXT/Packages/User/"
+  echo "Package control settings installed."
+else
+  echo "Package control settings already installed."
+fi
+
 # Install homebrew if needed.
 if [[ ! -e "$LOCAL/bin/brew" ]]; then
   echo "Installing homebrew..."

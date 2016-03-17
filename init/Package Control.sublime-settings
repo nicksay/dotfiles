@@ -1,0 +1,18 @@
+{
+	"installed_packages":
+	[
+		"Calculate",
+		"Color Highlighter",
+		"ColorPicker",
+		"DocBlockr",
+		"EditorConfig",
+		"GitGutter",
+		"LineEndings",
+		"Liquid",
+		"Package Control",
+		"Protocol Buffer Syntax",
+		"Sass",
+		"SSH Config",
+		"Theme - Spacegray"
+	]
+}
