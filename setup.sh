@@ -4,6 +4,7 @@ set -e  # stop on error
 
 
 LOCAL="$HOME/local"
+FONTS="$HOME/Library/Fonts"
 
 
 # Change to the script directory.
@@ -30,7 +31,7 @@ if [[ ! -e "$LOCAL/bin/brew" ]]; then
   find homebrew-master -mindepth 1 -maxdepth 1 \
       | cut -d / -f 2- \
       | tr '\n' '\0' \
-      | xargs -0 -n 1 -I __file__ mv homebrew-master/__file__ $LOCAL/
+      | xargs -0 -n 1 -I __file__ mv homebrew-master/__file__ "$LOCAL/"
   rm -rf homebrew-master
   rm homebrew.zip
   echo "Homebrew installed."
@@ -46,3 +47,19 @@ BREW="$LOCAL/bin/brew"
 "$BREW" install icdiff
 "$BREW" install node
 echo "Homebrew pacakges installed."
+
+# Install fonts.
+echo "Installing fonts..."
+source_code_pro_url=$(curl -s "https://api.github.com/repos/adobe-fonts/source-code-pro/releases/latest" \
+                                            | fgrep zipball_url \
+                                            | tr -d ' ,"' \
+                                            | cut -d : -f 2-)
+curl -sL "$source_code_pro_url" -o source_code_pro.zip
+unzip -q source_code_pro.zip
+mkdir -p "$FONTS"
+find adobe-fonts-source-code-pro* -iname "*.ttf" \
+    | tr '\n' '\0' \
+    | xargs -0 -n 1 -I __file__ mv __file__ "$FONTS/"
+rm -rf adobe-fonts-source-code-pro*
+rm source_code_pro.zip
+echo "Fonts installed."
