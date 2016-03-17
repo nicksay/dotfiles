@@ -49,6 +49,26 @@ BREW="$LOCAL/bin/brew"
 "$BREW" list rbenv &> /dev/null || "$BREW" install rbenv
 echo "Homebrew packages installed."
 
+# Install ruby and packages.
+RBENV="$LOCAL/bin/rbenv"
+if [[ -e "$RBENV" ]]; then
+  if ! "$RBENV" version | cut -d ' ' -f 1 | egrep -q '\d+\.\d+\.\d+'; then
+    echo "Installing ruby..."
+    ruby_version=$("$RBENV" install -l | egrep '\s+\d+\.\d+\.\d+$' | tail -1)
+    "$RBENV" install $ruby_version
+    "$RBENV" global $ruby_version
+    echo "Ruby installed."
+  else
+    echo "Ruby already installed."
+  fi
+  echo "Installing ruby packages..."
+  GEM="$HOME/.rbenv/shims/gem"
+  "$GEM" list --installed bundler &> /dev/null || "$GEM" install bundler
+  echo "Ruby packages installed."
+else
+  echo "WARNING: rbenv not found."
+fi
+
 # Install fonts.
 if [[ ! -e "$FONTS/SourceCodePro-Medium.otf" ]]; then
   echo "Installing fonts..."
