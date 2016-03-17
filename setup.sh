@@ -40,6 +40,19 @@ if [[ ! -e "$HOME/$SUBLIME_TEXT/Packages/User/Package Control.sublime-settings" 
 else
   echo "Package control settings already installed."
 fi
+echo "Installing terminal theme..."
+open "init/Base16 Space Gray.terminal"
+osascript <<END_OF_SCRIPT
+  tell application "Terminal"
+    delay 1
+    set default settings to settings set "Base16 Space Gray"
+    set all_window_ids to id of every window
+    repeat with window_id in all_window_ids
+      set current settings of tabs of (every window whose id is window_id) to settings set "Base16 Space Gray"
+    end repeat
+  end tell
+END_OF_SCRIPT
+echo "Terminal theme installed."
 
 # Install homebrew if needed.
 if [[ ! -e "$LOCAL/bin/brew" ]]; then
