@@ -40,13 +40,13 @@ else
 fi
 
 # Install homebrew packages.
-echo "Installing homebrew pacakges..."
+echo "Installing homebrew packages..."
 BREW="$LOCAL/bin/brew"
-"$BREW" install git
-"$BREW" install hub
-"$BREW" install icdiff
-"$BREW" install node
-echo "Homebrew pacakges installed."
+"$BREW" list git &> /dev/null || "$BREW" install git
+"$BREW" list hub &> /dev/null || "$BREW" install hub
+"$BREW" list icdiff &> /dev/null || "$BREW" install icdiff
+"$BREW" list node &> /dev/null || "$BREW" install node
+echo "Homebrew packages installed."
 
 # Install fonts.
 echo "Installing fonts..."
