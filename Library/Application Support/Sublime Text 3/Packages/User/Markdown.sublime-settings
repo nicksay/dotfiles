@@ -1,0 +1,12 @@
+{
+	"extensions":
+	[
+		"COMMIT_EDITMSG",
+		"PULLREQ_EDITMSG"
+	],
+	"rulers":
+	[
+		64,
+		80
+	]
+}
