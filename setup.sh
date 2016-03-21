@@ -83,6 +83,26 @@ BREW="$LOCAL/bin/brew"
 "$BREW" list rbenv &> /dev/null || "$BREW" install rbenv
 echo "Homebrew packages installed."
 
+# Install python and packages.
+PYENV="$LOCAL/bin/pyenv"
+if [[ -e "$PYENV" ]]; then
+  if ! "$PYENV" version | cut -d ' ' -f 1 | egrep -q '\d+\.\d+\.\d+'; then
+    echo "Installing python..."
+    python_version=$("$PYENV" install -l | egrep '\s+\d+\.\d+\.\d+$' | tail -1)
+    "$PYENV" install $python_version
+    "$PYENV" global $python_version
+    echo "Python installed."
+  else
+    echo "Python already installed."
+  fi
+  echo "Installing python packages..."
+  PIP="$HOME/.pyenv/shims/pip"
+  "$PIP" list yapf | egrep -q '^yapf ' || "$PIP" install yapf
+  echo "Python packages installed."
+else
+  echo "WARNING: pyenv not found."
+fi
+
 # Install ruby and packages.
 RBENV="$LOCAL/bin/rbenv"
 if [[ -e "$RBENV" ]]; then
