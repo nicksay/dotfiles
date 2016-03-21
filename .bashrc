@@ -7,17 +7,25 @@
 # ensure readline is configured
 [[ -r "$HOME/.inputrc" ]] && export INPUTRC="$HOME/.inputrc"
 
-# Default environment
+# Define path
 export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-# Extra locations with lower priority custom paths
-python_version=$(python -V 2>&1 | cut -c 8-10)
-export PATH="$PATH:/Developer/usr/bin:$HOME/Library/Python/${python_version}/bin"
+# Define extra path locations (lower priority)
+export PATH="$PATH:/Developer/usr/bin:"
+
 # Setup python environment
 export PYTHONSTARTUP="$HOME/.pystartup"
+which pyenv > /dev/null && eval "$(pyenv init -)"
+# Define path for system python user packages (lower priority)
+system_python_version=$(/usr/bin/python -V 2>&1 | cut -c 8-10)
+export PATH="$PATH:$HOME/Library/Python/${system_python_version}/bin"
+# Define path for pyenv python user packages (higher priority)
+export PATH="$HOME/.local/bin:$PATH"
+
+# Setup ruby environment
+which rbenv > /dev/null && eval "$(rbenv init -)"
+
 # Setup go environment
 export GOPATH="$HOME/Library/Go"
-# Setup ruby environment
-eval "$(rbenv init -)"
 
 
 # Prompt customization is done below, using a custom function
