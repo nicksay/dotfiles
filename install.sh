@@ -6,9 +6,6 @@ set -e  # stop on error
 # Change to the script directory.
 cd "$(dirname "$0")"
 
-# Update the files.
-git pull origin
-
 # Make needed directories.
 find . -mindepth 1 -type d -not -path "*.git*" \
     | cut -c 3- \
