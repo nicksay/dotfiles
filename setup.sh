@@ -41,6 +41,7 @@ else
   echo "Package control settings already installed."
 fi
 echo "Installing terminal theme..."
+open "init/Base16 Space Gray.itermcolors"
 open "init/Base16 Space Gray.terminal"
 osascript <<END_OF_SCRIPT
   tell application "Terminal"
