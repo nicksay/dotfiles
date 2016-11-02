@@ -79,6 +79,7 @@ BREW="$LOCAL/bin/brew"
 "$BREW" list git &> /dev/null || "$BREW" install git
 "$BREW" list hub &> /dev/null || "$BREW" install hub
 "$BREW" list icdiff &> /dev/null || "$BREW" install icdiff
+"$BREW" list jq &> /dev/null || "$BREW" install jq
 "$BREW" list node &> /dev/null || "$BREW" install node
 "$BREW" list pyenv &> /dev/null || "$BREW" install pyenv
 "$BREW" list rbenv &> /dev/null || "$BREW" install rbenv
