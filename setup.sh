@@ -55,6 +55,9 @@ osascript <<END_OF_SCRIPT
 END_OF_SCRIPT
 echo "Terminal theme installed."
 
+# Install remote files that aren't managed by a package manager below.
+curl -L "https://iterm2.com/misc/install_shell_integration_and_utilities.sh" | bash
+
 # Install homebrew if needed.
 if [[ ! -e "$LOCAL/bin/brew" ]]; then
   echo "Installing homebrew..."
