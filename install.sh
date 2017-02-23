@@ -63,6 +63,8 @@ function _main() {
   fi
 
   _copy_dotfiles
+
+  source $HOME/.bashrc
 }
 
 
