@@ -6,7 +6,6 @@ cd "$(dirname "$0")" # Run from the the script directory.
 
 LOCAL="$HOME/local"
 BREW="$LOCAL/bin/brew"
-CASK="$BREW cask"
 
 
 echo
@@ -29,11 +28,11 @@ packages="
   sublime-text
 "
 for pkg in $packages; do
-  if "$CASK" list $pkg &> /dev/null; then
+  if "$BREW" cask list $pkg &> /dev/null; then
     echo ✓  $pkg
   else
     echo 📦  $pkg
-    "$CASK" install $pkg
+    "$BREW" cask install $pkg
   fi
 done
 echo "Cask packages installed."
