@@ -8,19 +8,20 @@ ITERM2_PREFS="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
 TERMINAL_PREFS="$HOME/Library/Preferences/com.apple.Terminal.plist"
 
 
+echo
 echo "Installing terminal theme..."
 if [[ -e "$ITERM2_PREFS" ]] \
       && plutil -p "$ITERM2_PREFS" | fgrep -q "Base16 Space Gray"; then
-  echo iTerm2 ✓
+  echo ✓  iTerm2
 else
-  echo iTerm2
+  echo 📦  iTerm2
   open "Base16 Space Gray.itermcolors"
 fi
 if [[ -e "$TERMINAL_PREFS" ]] \
       && plutil -p "$TERMINAL_PREFS" | fgrep -q "Base16 Space Gray"; then
-  echo Terminal ✓
+  echo ✓  Terminal
 else
-  echo Terminal
+  echo 📦  Terminal
   open "Base16 Space Gray.terminal"
   osascript <<END_OF_SCRIPT
     tell application "Terminal"
