@@ -4,7 +4,7 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-ITERM2_PREFS="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+ITERM2_PREFS="$HOME/Library/Application\ Support/iTerm2/Preferences/com.googlecode.iterm2.plist"
 TERMINAL_PREFS="$HOME/Library/Preferences/com.apple.Terminal.plist"
 
 
