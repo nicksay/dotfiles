@@ -32,7 +32,7 @@ for pkg in $packages; do
     echo ✓  $pkg
   else
     echo 📦  $pkg
-    "$BREW" cask install $pkg
+    "$BREW" cask install --force $pkg
   fi
 done
 echo "Cask packages installed."
