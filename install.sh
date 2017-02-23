@@ -6,7 +6,6 @@ set -e  # Stop on error.
 cd "$(dirname "$0")"
 
 
-# Global variables.
 DRYRUN=0
 FORCE=0
 
@@ -31,7 +30,8 @@ function _rsync() {
 }
 
 
-function _install() {
+function _copy_dotfiles() {
+  echo "Copying dotfiles..."
   # Make needed directories.
   find "$PWD" -mindepth 1 -type d -not -path '*.git*' \
       | sed -e "s/^${PWD//\//\\/}/${HOME//\//\\/}/" \
@@ -44,23 +44,23 @@ function _install() {
       --exclude "install.sh" \
       --exclude "setup.sh" \
       "$PWD/" "$HOME/";
+  echo "Dotfiles copied."
 }
 
 
 function _main() {
   if (( $DRYRUN )); then
-    echo "Dry run, printing commands...."
-  elif (( $FORCE )); then
-    echo "Installing..."
-  else
+    echo "Dry run: commands will only be printed."
+  elif ! (( $FORCE )); then
     echo "Installing may overwrite files; use --dry-run to see which ones."
     read -p "Do you want to continue? (y/N) " -n 1;
-    echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
       exit
     fi
   fi
-  _install
+  echo
+
+  _copy_dotfiles
 }
 
 
@@ -91,6 +91,5 @@ while (( $# > 0 )); do
   fi
   shift
 done
-
 
 _main
