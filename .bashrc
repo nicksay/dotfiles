@@ -1,14 +1,14 @@
 #!/bin/bash
 
 
-# if not running interactively, don't do anything
-[[ -z "$PS1" ]] && return
-
-# ensure readline is configured
-[[ -r "$HOME/.inputrc" ]] && export INPUTRC="$HOME/.inputrc"
-
 # Define path
 export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+# If not running interactively, don't do anything else
+[[ -z "$PS1" ]] && return
+
+# Ensure readline is configured
+[[ -r "$HOME/.inputrc" ]] && export INPUTRC="$HOME/.inputrc"
 
 # Setup python environment
 export PYTHONSTARTUP="$HOME/.pystartup"
