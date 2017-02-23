@@ -9,8 +9,6 @@
 
 # Define path
 export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-# Define extra path locations (lower priority)
-export PATH="$PATH:/Developer/usr/bin:"
 
 # Setup python environment
 export PYTHONSTARTUP="$HOME/.pystartup"
