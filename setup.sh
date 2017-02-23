@@ -14,6 +14,7 @@ fi
 ./install.sh
 
 ./init/brew.sh
+./init/cask.sh
 ./init/python.sh
 ./init/ruby.sh
 ./init/fonts.sh
