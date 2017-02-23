@@ -15,6 +15,7 @@ if [[ -e "$ITERM2_PREFS" ]] \
   echo ✓  iTerm2
 else
   echo 📦  iTerm2
+  xattr -dr com.apple.quarantine "Base16 Space Gray.itermcolors"
   open "Base16 Space Gray.itermcolors"
 fi
 if [[ -e "$TERMINAL_PREFS" ]] \
@@ -22,6 +23,7 @@ if [[ -e "$TERMINAL_PREFS" ]] \
   echo ✓  Terminal
 else
   echo 📦  Terminal
+  xattr -dr com.apple.quarantine "Base16 Space Gray.terminal"
   open "Base16 Space Gray.terminal"
   osascript <<END_OF_SCRIPT
     tell application "Terminal"
