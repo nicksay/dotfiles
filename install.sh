@@ -49,16 +49,18 @@ function _copy_dotfiles() {
 
 
 function _main() {
+  echo
   if (( $DRYRUN )); then
     echo "Dry run: commands will only be printed."
+    echo
   elif ! (( $FORCE )); then
     echo "Installing may overwrite files; use --dry-run to see which ones."
     read -p "Do you want to continue? (y/N) " -n 1;
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
       exit
     fi
+    echo
   fi
-  echo
 
   _copy_dotfiles
 }

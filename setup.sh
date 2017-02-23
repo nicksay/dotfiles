@@ -10,7 +10,6 @@ if [[ $(xcode-select --install 2>&1) != *"already installed"* ]]; then
   exit 1
 fi
 
-
 ./install.sh
 
 ./init/brew.sh

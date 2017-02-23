@@ -9,6 +9,7 @@ RBENV="$LOCAL/bin/rbenv"
 GEM="$HOME/.rbenv/shims/gem"
 
 
+echo
 if [[ ! -e "$RBENV" ]]; then
   echo "WARNING: rbenv not found."
   exit
@@ -31,9 +32,9 @@ packages="
 "
 for pkg in $packages; do
   if "$GEM" list --installed $pkg &> /dev/null; then
-    echo $pkg ✓
+    echo ✓  $pkg
   else
-    echo $pkg
+    echo 📦  $pkg
     "$GEM" install $pkg
   fi
 done

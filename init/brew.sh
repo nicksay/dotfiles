@@ -8,6 +8,7 @@ LOCAL="$HOME/local"
 BREW="$LOCAL/bin/brew"
 
 
+echo
 if [[ -e "$BREW" ]]; then
   echo "Homebrew already installed."
 else
@@ -31,9 +32,9 @@ packages="
 "
 for pkg in $packages; do
   if "$BREW" list $pkg &> /dev/null; then
-    echo $pkg ✓
+    echo ✓  $pkg
   else
-    echo $pkg
+    echo 📦  $pkg
     "$BREW" install $pkg
   fi
 done

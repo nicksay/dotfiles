@@ -9,6 +9,7 @@ PYENV="$LOCAL/bin/pyenv"
 PIP="$HOME/.pyenv/shims/pip"
 
 
+echo
 if [[ ! -e "$PYENV" ]]; then
   echo "WARNING: pyenv not found."
   exit
@@ -31,9 +32,9 @@ packages="
 "
 for pkg in $packages; do
   if "$PIP" list $pkg | egrep -q "^$pkg "; then
-    echo $pkg ✓
+    echo ✓  $pkg
   else
-    echo $pkg
+    echo 📦  $pkg
     "$PIP" install $pkg
   fi
 done

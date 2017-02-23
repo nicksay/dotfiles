@@ -7,6 +7,7 @@ cd "$(dirname "$0")" # Run from the the script directory.
 SUBLIME_TEXT="$HOME/Library/Application Support/Sublime Text 3"
 
 
+echo
 if [[ -e "$SUBLIME_TEXT/Installed Packages/Package Control.sublime-package" ]]; then
   echo "Package control already installed."
 else

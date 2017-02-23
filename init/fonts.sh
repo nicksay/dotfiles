@@ -7,6 +7,7 @@ cd "$(dirname "$0")" # Run from the the script directory.
 FONTS="$HOME/Library/Fonts"
 
 
+echo
 if [[ -e "$FONTS/SourceCodePro-Regular.otf" ]]; then
   echo "Fonts already installed."
 else

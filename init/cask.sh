@@ -9,8 +9,9 @@ BREW="$LOCAL/bin/brew"
 CASK="$BREW cask"
 
 
+echo
 if "$BREW" tap | fgrep -q -x caskroom/cask; then
-echo "Cask already installed."
+  echo "Cask already installed."
 else
   echo "Installing cask..."
   "$BREW" tap caskroom/cask
@@ -29,9 +30,9 @@ packages="
 "
 for pkg in $packages; do
   if "$CASK" list $pkg &> /dev/null; then
-    echo $pkg ✓
+    echo ✓  $pkg
   else
-    echo $pkg
+    echo 📦  $pkg
     "$CASK" install $pkg
   fi
 done
