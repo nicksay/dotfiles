@@ -12,16 +12,9 @@ if [[ -e "$BREW" ]]; then
   echo "Homebrew already installed."
 else
   echo "Installing homebrew..."
-  homebrew_url="https://github.com/Homebrew/homebrew/archive/master.zip"
-  curl -sL "$homebrew_url" -o homebrew.zip
-  unzip -q homebrew.zip
   mkdir -p "$LOCAL"
-  find homebrew-master -mindepth 1 -maxdepth 1 \
-      | cut -d / -f 2- \
-      | tr '\n' '\0' \
-      | xargs -0 -n 1 -I __file__ mv homebrew-master/__file__ "$LOCAL/"
-  rm -rf homebrew-master
-  rm homebrew.zip
+  homebrew_url="https://github.com/Homebrew/brew/tarball/master"
+  curl -sL "$homebrew_url" | tar xz --strip 1 -C "$LOCAL"
   echo "Homebrew installed."
 fi
 
