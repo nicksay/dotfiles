@@ -7,6 +7,15 @@ cd "$(dirname "$0")" # Run from the the script directory.
 echo
 echo "Setting defaults..."
 
+
+# Ask for sudo access before starting.
+sudo -v
+
+
+# Kill normal apps before setting defaults so values aren't overwritten.
+killall "App Store" "System Preferences"
+
+
 # Global
 
 # Set highlight color to orange
@@ -61,6 +70,21 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock showhidden -bool true
 
 
-# Kill apps so changes take effect
+# App Store / Software Update
+
+# Enable the automatic update check
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+# Check for software updates daily, not just once per week
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate ScheduleFrequency -int 1
+# Install System data files & security updates
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+# Auto-update apps
+sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
+
+
+
+# Kill persistent apps after setting defaults so changes take effect.
 killall Dock Finder
+
+
 echo "Defaults set."
