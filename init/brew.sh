@@ -23,6 +23,7 @@ fi
 echo "Installing homebrew packages..."
 packages="
   git
+  hg
   hub
   icdiff
   jq
