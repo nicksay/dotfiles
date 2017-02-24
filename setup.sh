@@ -12,6 +12,7 @@ fi
 
 ./install.sh
 
+./init/defaults.sh
 ./init/brew.sh
 ./init/cask.sh
 ./init/python.sh
