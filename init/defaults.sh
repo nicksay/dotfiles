@@ -13,7 +13,7 @@ sudo -v
 
 
 # Kill normal apps before setting defaults so values aren't overwritten.
-killall "App Store" "System Preferences"
+killall "App Store" "System Preferences" &> /dev/null || true
 
 
 # Global
@@ -84,7 +84,7 @@ sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool tru
 
 
 # Kill persistent apps after setting defaults so changes take effect.
-killall Dock Finder
+killall Dock Finder &> /dev/null || true
 
 
 echo "Defaults set."
