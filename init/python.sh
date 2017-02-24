@@ -31,7 +31,7 @@ packages="
   yapf
 "
 for pkg in $packages; do
-  if "$PIP" list $pkg | egrep -q "^$pkg "; then
+  if "$PIP" list --format columns $pkg | egrep -q "^$pkg "; then
     echo ✓  $pkg
   else
     echo 📦  $pkg
