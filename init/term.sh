@@ -4,7 +4,8 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-ITERM2_PREFS="$HOME/Library/Application\ Support/iTerm2/Preferences/com.googlecode.iterm2.plist"
+ITERM2_PREFS="$HOME/Library/Application Support/iTerm2/Preferences/com.googlecode.iterm2.plist"
+ITERM2_SHELL="$HOME/.iterm2_shell_integration.bash"
 TERMINAL_PREFS="$HOME/Library/Preferences/com.apple.Terminal.plist"
 
 
@@ -39,6 +40,11 @@ fi
 echo "Terminal theme installed."
 
 
-echo "Installing iTerm2 shell integration..."
-curl -L "https://iterm2.com/misc/install_shell_integration_and_utilities.sh" | bash
-echo "iTerm2 shell integration installed."
+if [[ -e "$ITERM2_SHELL" ]]; then
+  echo "iTerm2 shell integration already installed."
+else
+  echo "Installing iTerm2 shell integration..."
+  url="https://iterm2.com/misc/install_shell_integration_and_utilities.sh"
+  curl -sL "$url" | bash
+  echo "iTerm2 shell integration installed."
+fi
