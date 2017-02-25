@@ -22,6 +22,10 @@ killall "App Store" "System Preferences" &> /dev/null || true
 defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.701961"
 # Enable full keyboard access for all control (e.g. enable Tab in dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# Make the mouse tracking speed faster
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.0
+# Enable right-click when using a Magic Mouse
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string TwoButton
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable quarantine warnings about unidentified developers
