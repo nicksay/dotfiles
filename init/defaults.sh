@@ -77,6 +77,10 @@ defaults write com.apple.dock autohide -bool true
 # Remove the delay when showing the Dock and make the animation faster
 defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.2
+# Make the Launchpad animations faster
+defaults write com.apple.dock springboard-show-duration -float 0.1
+defaults write com.apple.dock springboard-hide-duration -float 0.1
+defaults write com.apple.dock springboard-page-duration -float 0.3
 
 
 # App Store / Software Update
