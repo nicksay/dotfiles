@@ -64,10 +64,15 @@ chflags nohidden ~/Library
 
 # Set the Dock position to left
 defaults write com.apple.dock orientation -string "left"
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# Set the icon size of Dock items to 48 pixels
+defaults write com.apple.dock tilesize -int 48
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+# Remove the delay when showing the Dock and make the animation faster
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.2
 
 
 # App Store / Software Update
