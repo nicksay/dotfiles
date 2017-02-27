@@ -7,7 +7,7 @@
 # Command Abbreviations & Synonyms
 alias ..='cd ..'
 alias cd..='cd ..'
-function mkcd() { mkdir "$1" && cd "$1"; }
+function mkcd() { mkdir -p "$1" && cd "$1"; }
 alias e='subl'
 alias py='python'
 alias more='less'
