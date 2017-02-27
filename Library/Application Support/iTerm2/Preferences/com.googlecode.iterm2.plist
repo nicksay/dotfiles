@@ -899,6 +899,10 @@
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
+	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
+	<true/>
+	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
+	<integer>0</integer>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
