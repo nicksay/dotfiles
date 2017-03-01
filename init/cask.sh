@@ -22,6 +22,7 @@ echo "Installing cask packages..."
 packages="
   caffeine
   dropbox
+  firefox
   google-chrome
   google-drive
   iterm2
