@@ -950,8 +950,10 @@
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
-	<key>SUSendProfileInfo</key>
-	<false/>
+	<key>SUFeedURL</key>
+	<string>https://iterm2.com/appcasts/final.xml?shard=84</string>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 </dict>
