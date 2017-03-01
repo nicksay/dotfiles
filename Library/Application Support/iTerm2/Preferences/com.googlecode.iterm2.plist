@@ -227,6 +227,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>B074304E-C4AF-46AD-B7CB-2364D590CED2</string>
+	<key>HideTab</key>
+	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
