@@ -18,6 +18,10 @@ killall "App Store" "System Preferences" &> /dev/null || true
 
 # Global
 
+# Power Adapter: Prevent computer from sleeping automatically
+sudo pmset -c sleep 0
+# Power Adapter: Turn display off after 10 minutes
+sudo pmset -c displaysleep 10
 # Set highlight color to orange
 defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.701961"
 # Enable full keyboard access for all control (e.g. enable Tab in dialogs)
