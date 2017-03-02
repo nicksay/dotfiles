@@ -6,6 +6,9 @@
     { "keys": ["ctrl+]"], "command": "indent" },
     { "keys": ["ctrl+["], "command": "unindent" },
 
+    { "keys": ["super+ctrl+p"], "command": "swap_line_up" },
+    { "keys": ["super+ctrl+n"], "command": "swap_line_down" },
+
     { "keys": ["ctrl+alt+y"], "command": "wrap_lines" },
 
     { "keys": ["super+\\"], "command": "toggle_side_bar" },
