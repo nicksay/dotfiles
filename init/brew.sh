@@ -30,6 +30,7 @@ packages="
   node
   pyenv
   rbenv
+  rename
 "
 for pkg in $packages; do
   if "$BREW" list $pkg &> /dev/null; then
