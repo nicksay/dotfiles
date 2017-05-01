@@ -52,7 +52,7 @@
 	# History.
 	l = log --pretty=format:'%C(yellow)%h%C(white) %an <%ae> %>|(80)%ai%Creset%n%C(bold)%w(0,4,4)%s%C(reset)%n%+b'
 	lo = log --oneline
-	ll = log --stat --pretty=full
+	ll = log --stat --pretty=fuller
 	lp = log -p
 	lg = !git graph
 	# -- Show the log with colors and ascii-art commit tree.
