@@ -34,12 +34,6 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 
-[hub]
-	user = nicksay
-[hub "remote"]
-	upstream = origin
-	fork = nicksay
-
 [alias]
 	# Shortcuts.
 	st = status
