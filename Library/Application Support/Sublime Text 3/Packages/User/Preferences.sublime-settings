@@ -18,7 +18,7 @@
 	[
 		80
 	],
-  "spacegray_fileicons": true,
+	"spacegray_fileicons": true,
 	"spell_check": false,
 	"tab_size": 2,
 	"theme": "Spacegray.sublime-theme",
