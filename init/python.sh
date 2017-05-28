@@ -28,6 +28,7 @@ fi
 
 echo "Installing python packages..."
 packages="
+  numpy
   yapf
 "
 for pkg in $packages; do
