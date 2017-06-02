@@ -160,7 +160,7 @@ fi
 add_ssh_keys
 
 # Enable programmable tab completion
-if [[ -f "$(brew --prefix)/etc/bash_completion" ]]; then
+if which brew 2>&1 > /dev/null && [[ -f "$(brew --prefix)/etc/bash_completion" ]]; then
   source $(brew --prefix)/etc/bash_completion
 elif [[ -r "/usr/local/etc/bash_completion" ]]; then
   source /usr/local/etc/bash_completion
