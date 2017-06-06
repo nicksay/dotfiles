@@ -28,6 +28,7 @@ packages="
   iterm2
   simplenote
   sublime-text
+  visual-studio-code
 "
 for pkg in $packages; do
   if "$BREW" cask list $pkg &> /dev/null; then
