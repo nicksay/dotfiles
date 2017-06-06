@@ -20,3 +20,4 @@ fi
 ./init/fonts.sh
 ./init/term.sh
 ./init/subl.sh
+./init/code.sh
