@@ -1,6 +1,8 @@
 {
     "editor.fontFamily": "Source Code Pro, Monaco, monospace",
     "editor.fontSize": 13,
+    "editor.rulers": [80],
+    "extensions.autoUpdate": true,
     "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
         "statusBar.background": "#252525",
