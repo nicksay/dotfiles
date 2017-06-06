@@ -1,0 +1,11 @@
+{
+    "editor.fontFamily": "Source Code Pro, Monaco, monospace",
+    "editor.fontSize": 13,
+    "workbench.activityBar.visible": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#252525",
+        "statusBar.noFolderBackground": "#252525",
+        "statusBar.debuggingBackground": "#511f1f"
+    },
+    "workbench.colorTheme": "Base16 Dark Ocean"
+}
