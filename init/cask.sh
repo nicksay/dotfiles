@@ -26,6 +26,7 @@ packages="
   google-chrome
   google-drive
   iterm2
+  simplenote
   sublime-text
 "
 for pkg in $packages; do
