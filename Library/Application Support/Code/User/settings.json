@@ -9,5 +9,8 @@
         "statusBar.noFolderBackground": "#252525",
         "statusBar.debuggingBackground": "#511f1f"
     },
-    "workbench.colorTheme": "Base16 Dark Ocean"
+    "workbench.colorTheme": "Base16 Dark Ocean",
+    "[markdown]": {
+        "editor.rulers": [72, 80]
+    }
 }
