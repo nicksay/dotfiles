@@ -26,6 +26,7 @@ packages="
   google-chrome
   google-drive
   iterm2
+  java
   simplenote
   sublime-text
   visual-studio-code
