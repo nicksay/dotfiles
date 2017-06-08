@@ -8,7 +8,7 @@
 alias ..='cd ..'
 alias cd..='cd ..'
 function mkcd() { mkdir -p "$1" && cd "$1"; }
-alias e='subl'
+alias e='code'
 alias py='python'
 alias more='less'
 alias q='exit'
