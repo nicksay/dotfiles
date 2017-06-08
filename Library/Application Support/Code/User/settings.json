@@ -7,7 +7,23 @@
     "workbench.colorCustomizations": {
         "statusBar.background": "#252525",
         "statusBar.noFolderBackground": "#252525",
-        "statusBar.debuggingBackground": "#511f1f"
+        "statusBar.debuggingBackground": "#511f1f",
+        "terminal.ansiBlack": "#000000",
+        "terminal.ansiRed": "#AC4142",
+        "terminal.ansiGreen": "#90A959",
+        "terminal.ansiYellow": "#F4BF75",
+        "terminal.ansiBlue": "#6A9FB5",
+        "terminal.ansiMagenta": "#AA759F",
+        "terminal.ansiCyan": "#75BFAA",
+        "terminal.ansiWhite": "#D0D0D0",
+        "terminal.ansiBrightBlack": "#505050",
+        "terminal.ansiBrightRed": "#AC4142",
+        "terminal.ansiBrightGreen": "#90A959",
+        "terminal.ansiBrightYellow": "#F4BF75",
+        "terminal.ansiBrightBlue": "#6A9FB5",
+        "terminal.ansiBrightMagenta": "#AA759F",
+        "terminal.ansiBrightCyan": "#75BFAA",
+        "terminal.ansiBrightWhite": "#F5F5F5"
     },
     "workbench.colorTheme": "Base16 Dark Ocean",
     "[markdown]": {
