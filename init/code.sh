@@ -17,6 +17,7 @@ fi
 echo "Installing code extensions..."
 extensions="
   AndrsDC.base16-themes
+  donjayamanne.python
 "
 for ext in $extensions; do
   if "$CODE" --list-extensions | egrep -q "^$ext\b"; then
