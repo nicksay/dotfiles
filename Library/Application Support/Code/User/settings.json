@@ -2,7 +2,6 @@
     "editor.fontFamily": "Source Code Pro, Monaco, monospace",
     "editor.fontSize": 13,
     "editor.rulers": [80],
-    "extensions.autoUpdate": true,
     "terminal.integrated.fontFamily": "Source Code Pro, Monaco, monospace",
     "terminal.integrated.fontSize": 13,
     "workbench.activityBar.visible": true,
