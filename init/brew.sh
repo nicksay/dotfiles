@@ -22,6 +22,7 @@ fi
 
 echo "Installing homebrew packages..."
 packages="
+  ctags
   git
   hg
   hub
