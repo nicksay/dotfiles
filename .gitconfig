@@ -48,7 +48,7 @@
 	icdiff = icdiff
 
 	# History.
-	l = log --pretty=format:'%C(yellow)%h%C(white) %an <%ae> %>|(80)%ai%Creset%n%C(bold)%w(0,4,4)%s%C(reset)%n%+b'
+	l = log --pretty=format:'%C(auto)%>|(78)%d%n%h %an <%ae> %>|(77)%ai%n%C(bold)%s%C(reset)%+b'
 	lo = log --oneline
 	ll = log --stat --pretty=fuller
 	lg = !git graph
