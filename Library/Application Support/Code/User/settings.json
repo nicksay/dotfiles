@@ -2,6 +2,7 @@
     "editor.fontFamily": "Source Code Pro, Monaco, monospace",
     "editor.fontSize": 13,
     "editor.rulers": [80],
+    "files.insertFinalNewline": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Source Code Pro, Monaco, monospace",
     "terminal.integrated.fontSize": 13,
