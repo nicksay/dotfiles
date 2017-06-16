@@ -21,5 +21,7 @@
 { "key": "ctrl+cmd+n",            "command": "editor.action.moveLinesDownAction",
                                      "when": "editorTextFocus && !editorReadonly" },
 { "key": "ctrl+cmd+p",            "command": "editor.action.moveLinesUpAction",
+                                     "when": "editorTextFocus && !editorReadonly" },
+{ "key": "shift+cmd+d",           "command": "editor.action.copyLinesDownAction",
                                      "when": "editorTextFocus && !editorReadonly" }
 ]
