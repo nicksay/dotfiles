@@ -28,6 +28,7 @@ packages="
   iterm2
   java
   simplenote
+  slack
   sublime-text
   visual-studio-code
 "
