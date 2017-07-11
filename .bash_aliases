@@ -358,9 +358,8 @@ function diffcolor() {
 }
 
 
-function web() {
-  python -m SimpleHTTPServer
-}
+alias serve='simplehttp2server'
+
 
 function check_ssh_agent() {
   status="1"
