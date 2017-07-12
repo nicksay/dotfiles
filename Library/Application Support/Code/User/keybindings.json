@@ -9,7 +9,7 @@
                                      "when": "editorTextFocus" },
 { "key": "ctrl+'",                "command": "scrollLineUp",
                                      "when": "editorTextFocus" },
-/* editing */
+/* basic editing */
 { "key": "alt+h",                 "command": "deleteWordLeft",
                                      "when": "editorTextFocus && !editorReadonly" },
 { "key": "alt+d",                 "command": "deleteWordRight",
@@ -17,6 +17,11 @@
 { "key": "ctrl+u",                "command": "deleteAllLeft",
                                      "when": "editorTextFocus && !editorReadonly" },
 { "key": "ctrl+k",                "command": "deleteAllRight",
+                                     "when": "editorTextFocus && !editorReadonly" },
+/* move/copy lines */
+{ "key": "ctrl+]",                "command": "editor.action.indentLines",
+                                     "when": "editorTextFocus && !editorReadonly" },
+{ "key": "ctrl+[",                 "command": "editor.action.outdentLines",
                                      "when": "editorTextFocus && !editorReadonly" },
 { "key": "ctrl+cmd+n",            "command": "editor.action.moveLinesDownAction",
                                      "when": "editorTextFocus && !editorReadonly" },
