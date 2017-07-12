@@ -1,6 +1,7 @@
 {
     "editor.fontFamily": "Source Code Pro, Monaco, monospace",
     "editor.fontSize": 13,
+    "editor.tabSize": 2,
     "editor.rulers": [80],
     "files.insertFinalNewline": true,
     "python.formatting.provider": "yapf",
