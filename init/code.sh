@@ -18,6 +18,7 @@ echo "Installing code extensions..."
 extensions="
   AndrsDC.base16-themes
   donjayamanne.python
+  ms-vscode.cpptools
 "
 for ext in $extensions; do
   if "$CODE" --list-extensions | egrep -q "^$ext\b"; then
