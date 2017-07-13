@@ -36,6 +36,7 @@ done
 
 echo "Installing homebrew packages..."
 packages="
+  clang-format
   ctags
   git
   hg
