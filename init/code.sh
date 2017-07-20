@@ -17,7 +17,10 @@ fi
 echo "Installing code extensions..."
 extensions="
   AndrsDC.base16-themes
+  dbaeumer.vscode-eslint
   donjayamanne.python
+  eg2.tslint
+  joelday.docthis
   ms-vscode.cpptools
 "
 for ext in $extensions; do
