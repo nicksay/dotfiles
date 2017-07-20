@@ -32,6 +32,7 @@
         "terminal.ansiBrightWhite": "#F5F5F5"
     },
     "workbench.colorTheme": "Base16 Dark Ocean",
+    "workbench.startupEditor": "newUntitledFile",
     "[markdown]": {
         "editor.rulers": [72, 80]
     }
