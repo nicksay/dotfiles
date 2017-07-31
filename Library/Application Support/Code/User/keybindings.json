@@ -1,41 +1,92 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-/* navigation */
-{ "key": "alt+b",                 "command": "cursorWordLeft",
-                                     "when": "editorTextFocus" },
-{ "key": "alt+f",                 "command": "cursorWordRight",
-                                     "when": "editorTextFocus" },
-{ "key": "ctrl+/",                "command": "scrollLineDown",
-                                     "when": "editorTextFocus" },
-{ "key": "ctrl+'",                "command": "scrollLineUp",
-                                     "when": "editorTextFocus" },
-/* selection */
-{ "key": "shift+ctrl+n",          "command": "cursorDownSelect",
-                                     "when": "editorTextFocus" },
-{ "key": "shift+ctrl+p",          "command": "cursorUpSelect",
-                                     "when": "editorTextFocus" },
-{ "key": "shift+ctrl+b",          "command": "cursorLeftSelect",
-                                     "when": "editorTextFocus" },
-{ "key": "shift+ctrl+f",          "command": "cursorRightSelect",
-                                     "when": "editorTextFocus" },
-/* basic editing */
-{ "key": "alt+h",                 "command": "deleteWordLeft",
-                                     "when": "editorTextFocus && !editorReadonly" },
-{ "key": "alt+d",                 "command": "deleteWordRight",
-                                     "when": "editorTextFocus && !editorReadonly" },
-{ "key": "ctrl+u",                "command": "deleteAllLeft",
-                                     "when": "editorTextFocus && !editorReadonly" },
-{ "key": "ctrl+k",                "command": "deleteAllRight",
-                                     "when": "editorTextFocus && !editorReadonly" },
-/* move/copy lines */
-{ "key": "ctrl+]",                "command": "editor.action.indentLines",
-                                     "when": "editorTextFocus && !editorReadonly" },
-{ "key": "ctrl+[",                 "command": "editor.action.outdentLines",
-                                     "when": "editorTextFocus && !editorReadonly" },
-{ "key": "ctrl+cmd+n",            "command": "editor.action.moveLinesDownAction",
-                                     "when": "editorTextFocus && !editorReadonly" },
-{ "key": "ctrl+cmd+p",            "command": "editor.action.moveLinesUpAction",
-                                     "when": "editorTextFocus && !editorReadonly" },
-{ "key": "shift+cmd+d",           "command": "editor.action.copyLinesDownAction",
-                                     "when": "editorTextFocus && !editorReadonly" }
+  /* navigation */
+  {
+    "key": "alt+b",
+    "command": "cursorWordLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+f",
+    "command": "cursorWordRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "scrollLineDown",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+'",
+    "command": "scrollLineUp",
+    "when": "editorTextFocus"
+  },
+  /* selection */
+  {
+    "key": "shift+ctrl+n",
+    "command": "cursorDownSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+ctrl+p",
+    "command": "cursorUpSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+ctrl+b",
+    "command": "cursorLeftSelect",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+ctrl+f",
+    "command": "cursorRightSelect",
+    "when": "editorTextFocus"
+  },
+  /* basic editing */
+  {
+    "key": "alt+h",
+    "command": "deleteWordLeft",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+d",
+    "command": "deleteWordRight",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "deleteAllLeft",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "deleteAllRight",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  /* move/copy lines */
+  {
+    "key": "ctrl+]",
+    "command": "editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+n",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+p",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }
 ]

@@ -1,11 +1,17 @@
 {
     "editor.fontFamily": "Source Code Pro, Monaco, monospace",
     "editor.fontSize": 13,
+    "editor.formatOnSave": true,
     "editor.tabSize": 2,
-    "editor.rulers": [80],
+    "editor.rulers": [
+        80
+    ],
     "files.insertFinalNewline": true,
     "python.formatting.provider": "yapf",
-    "python.formatting.yapfArgs": ["--style", "{based_on_style: google}"],
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{based_on_style: google}"
+    ],
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Source Code Pro, Monaco, monospace",
     "terminal.integrated.fontSize": 13,
@@ -34,6 +40,9 @@
     "workbench.colorTheme": "Base16 Dark Ocean",
     "workbench.startupEditor": "newUntitledFile",
     "[markdown]": {
-        "editor.rulers": [72, 80]
+        "editor.rulers": [
+            72,
+            80
+        ]
     }
 }
