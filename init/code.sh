@@ -18,6 +18,7 @@ echo "Installing code extensions..."
 extensions="
   AndrsDC.base16-themes
   dbaeumer.vscode-eslint
+  DevonDCarew.bazel-code
   donjayamanne.python
   eg2.tslint
   joelday.docthis
