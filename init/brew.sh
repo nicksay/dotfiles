@@ -36,6 +36,8 @@ done
 
 echo "Installing homebrew packages..."
 packages="
+  bazel
+  buildifier
   clang-format
   ctags
   git
