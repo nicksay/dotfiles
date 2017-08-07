@@ -27,75 +27,91 @@ alias   lla='ls -G -lavhF'
 alias   ll?='ls -G -ldavhF'
 
 # Prompt Customization
-function settitle() {
-  if [[ "$1" ]]; then
-    echo -ne "\e]0;$1\007"
-  else
-    echo -ne "\e]0;$TERM\007"
+function _prompt_time() {
+  date '+%-k:%M:%S'
+}
+function _prompt_date() {
+  date '+%b %d %Z'
+}
+function _prompt_dir() {
+  local dir="${1:-$PWD}"
+  if [[ "$dir" =~ ^"$HOME" ]]; then
+    dir="~${dir#$HOME}"
+  fi
+  local max=${2:-64}
+  max=$(( max - 4 ))  # account for adding ".../" later
+  echo "$dir" | awk -F/ -v MAX=$max '{
+    p="";
+    n=NF;
+    l=length($n "/");
+    while (n > 0 && l < MAX) {
+      p=$n "/" p;
+      n--;
+      l=length($n "/" p);
+    }
+    if (n > 0) { p=".../" p; }
+    printf "%s",p
+  }'
+}
+function _prompt_vcs() {
+  if type -t __git_ps1 &> /dev/null; then
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    if [[ "$PWD/" =~ "/$USER/" ]]; then
+      export GIT_CEILING_DIRECTORIES="${PWD%%/$USER/*}/$USER"
+    fi
+    local gitbranch=$(__git_ps1 "%s")
+    if [[ "$gitbranch" ]]; then
+      local gitdir="$(basename "$(git rev-parse --show-toplevel)")"
+      printf "(%.16s:%.16s)" "$gitdir" "$gitbranch"
+    fi
   fi
 }
-function set_screen_title() {
-  if [[ "$PWD" =~ "$HOME" ]]; then
-    screen_prompt_dir="${PWD/$HOME/~}"
-  else
-    screen_prompt_dir="${PWD}"
+function _prompt_color() {
+  case $1 in
+    black)        printf '\[\033[30m\]';;
+    darkgrey)     printf '\[\033[1;30m\]';;
+    lightgrey)    printf '\[\033[37m\]';;
+    white)        printf '\[\033[1;37m\]';;
+    red)          printf '\[\033[31m\]';;
+    brightred)    printf '\[\033[1;31m\]';;
+    green)        printf '\[\033[32m\]';;
+    brightgreen)  printf '\[\033[1;32m\]';;
+    yellow)       printf '\[\033[33m\]';;
+    brightyellow) printf '\[\033[1;33m\]';;
+    blue)         printf '\[\033[34m\]';;
+    brightblue)   printf '\[\033[1;34m\]';;
+    purple)       printf '\[\033[35m\]';;
+    brightpurple) printf '\[\033[1;35m\]';;
+    cyan)         printf '\[\033[36m\]';;
+    brightcyan)   printf '\[\033[1;36m\]';;
+    *)            printf '\[\033[m\]';;
+  esac
+}
+function _prompt_mark() {
+  if ! type -t iterm2_prompt_mark &> /dev/null; then
+    return
   fi
-  screen_prompt_dir=$(echo "$screen_prompt_dir" | sed -E -e 's|.+((/[^/]+){3})|...\1|')
-  printf '\ek%s\e\\' "${screen_prompt_dir}"
+  printf '\[$(iterm2_prompt_mark)\]'
 }
 function prompt_customize() {
-  pscolor=$1;
-  case $pscolor in
-    black)        pscode='\[\033[30m\]';;
-    darkgrey)     pscode='\[\033[1;30m\]';;
-    lightgrey)    pscode='\[\033[37m\]';;
-    white)        pscode='\[\033[1;37m\]';;
-    red)          pscode='\[\033[31m\]';;
-    brightred)    pscode='\[\033[1;31m\]';;
-    green)        pscode='\[\033[32m\]';;
-    brightgreen)  pscode='\[\033[1;32m\]';;
-    yellow)       pscode='\[\033[33m\]';;
-    brightyellow) pscode='\[\033[1;33m\]';;
-    blue)         pscode='\[\033[34m\]';;
-    brightblue)   pscode='\[\033[1;34m\]';;
-    purple)       pscode='\[\033[35m\]';;
-    brightpurple) pscode='\[\033[1;35m\]';;
-    cyan)         pscode='\[\033[36m\]';;
-    brightcyan)   pscode='\[\033[1;36m\]';;
-    *)            pscode='\[\033[m\]';
-  esac
-  txtcode='\[\033[m\]';
-  prefix="${debian_chroot:+($debian_chroot)}"
+  local prompt_color=$1;
   case $TERM in
     xterm* | screen* )
-      if [[ $TERM =~ "screen" ]]; then
-        export PROMPT_COMMAND="set_screen_title; $PROMPT_COMMAND"
-      fi
       if [[ $TERM =~ "color" ]]; then
-        colorstart="$pscode"
-        colorend="$txtcode"
-      else
-        colorstart=""
-        colend=""
+        local color_start="$(_prompt_color $prompt_color)"
+        local color_end="$(_prompt_color)"
       fi
-      workdir="\$( p=\$PWD; p=\${p/\$HOME\//\~\/}; echo \$p | sed -E -e 's|.+((/[^/]+){5})|...\1|' )"
-      if type -t __git_ps1 &> /dev/null; then
-        export GIT_PS1_SHOWDIRTYSTATE=1
-        export GIT_CEILING_DIRECTORIES="/home"
-        gitbranch="\$([[ \$(__git_ps1) != '' ]] && __git_ps1 \"(\$(basename \$(git rev-parse --show-toplevel)):%s)\")"
-      else
-        gitbranch=""
-      fi
-      timestr="\$(date '+%-k:%M:%S')"
-      datestr="\$(date '+%b %d %Z')";
-      lp="${prefix}${timestr} ${gitbranch}${workdir}"
-      rp="${datestr} [\u@\h]"
-      rw="\$( echo \$(( COLUMNS / 3 )) )"
-      lw="\$( echo \$(( COLUMNS - (COLUMNS / 3) )) )"
-      # Call settitle() in the prompt to reset the title after commands
-      # are done (see below).
-      t=$(settitle)
-      PS1="${t}\n${colorstart}\$(printf \"%-${lw}s\" \"${lp}\")\$(printf \"%${rw}s\" \"${rp}\")${colorend}\n\$ "
+      local left_width="\$( echo \$(( COLUMNS - (COLUMNS / 3) )) )"
+      local right_width="\$( echo \$(( COLUMNS / 3 )) )"
+      local left_prompt_string="\$(_prompt_time) \$(_prompt_vcs)\$(_prompt_dir)"
+      local right_prompt_string="\$(_prompt_date) [\u@\h]"
+      # Line 1 contains path and status info.
+      local line1_left="\$(printf \"%-*.*s\" $left_width $left_width \"$left_prompt_string\")"
+      local line1_right="\$(printf \"%*.*s\" $right_width $right_width \"$right_prompt_string\")"
+      local line1="${color_start}${line1_left}${line1_right}${color_end}"
+      # Line 2 handles input.
+      local line2="$(_prompt_mark)\$ "
+      PS1="\n${line1}\n${line2}"
       ;;
     *)
       PS1="${prefix}[\u@\h] \w\$ "
@@ -107,10 +123,6 @@ function prompt_customize() {
   if [[ -n $HOST ]]; then
     PS1=${PS1//\\h/${HOST}}  ## set in .bashrc
   fi
-  # Equivalent of settitle() but uses trap + $BASH_COMMAND to update
-  # the title to the currently executing command.
-  ### Disabled on Mac OS X.
-  ### trap 'echo -ne "\e]0;$BASH_COMMAND\007"' DEBUG
   export PS1;
 }
 
