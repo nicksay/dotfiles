@@ -40,5 +40,8 @@
       72,
       80
     ]
+  },
+  "[python]": {
+    "editor.tabSize": 4
   }
 }
