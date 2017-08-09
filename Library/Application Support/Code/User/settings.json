@@ -35,6 +35,12 @@
   },
   "workbench.colorTheme": "Base16 Dark Ocean",
   "workbench.startupEditor": "newUntitledFile",
+  "[git-commit]": {
+    "editor.rulers": [
+      72,
+      80
+    ]
+  },
   "[markdown]": {
     "editor.rulers": [
       72,
