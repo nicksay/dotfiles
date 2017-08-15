@@ -1,4 +1,5 @@
 {
+  "editor.detectIndentation": false,
   "editor.fontFamily": "Source Code Pro, Monaco, monospace",
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
