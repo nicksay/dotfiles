@@ -7,6 +7,9 @@
   "editor.rulers": [
     80
   ],
+  "files.associations": {
+    "PULLREQ_EDITMSG": "markdown"
+  },
   "files.insertFinalNewline": true,
   "javascript.format.enable": false,
   "python.formatting.provider": "yapf",
