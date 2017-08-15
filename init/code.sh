@@ -23,6 +23,7 @@ extensions="
   eg2.tslint
   joelday.docthis
   ms-vscode.cpptools
+  xaver.clang-format
 "
 for ext in $extensions; do
   if "$CODE" --list-extensions | egrep -q "^$ext\b"; then
