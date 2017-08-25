@@ -146,6 +146,7 @@ function line() { sed -n "$1 p" "$2"; } # line 5 file => show line 5 of file
 
 # Fix Finder Annoyances
 alias dsremove='find . -name ".DS_Store" -print -delete'
+alias slreset='defaults delete com.apple.Spotlight userHasMovedWindow'
 
 # Misc
 alias datestamp='date "+%Y%m%d"'
