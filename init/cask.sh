@@ -24,7 +24,7 @@ packages="
   dropbox
   firefox
   google-chrome
-  google-drive
+  google-backup-and-sync
   iterm2
   java
   simplenote
