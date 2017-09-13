@@ -1,1 +1,4 @@
+[FORMAT]
+
+# String used as indentation unit.
 indent-string='    '
