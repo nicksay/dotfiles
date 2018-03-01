@@ -20,9 +20,9 @@ extensions="
   bibhasdn.unique-lines
   dbaeumer.vscode-eslint
   DevonDCarew.bazel-code
-  donjayamanne.python
   eg2.tslint
   joelday.docthis
+  ms-python.python
   ms-vscode.cpptools
   stkb.rewrap
   wmaurer.change-case
