@@ -24,6 +24,7 @@ extensions="
   EditorConfig.EditorConfig
   eg2.tslint
   joelday.docthis
+  mrcrowl.hg
   ms-python.python
   ms-vscode.cpptools
   rix0rrr.gcl
