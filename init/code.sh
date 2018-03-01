@@ -20,6 +20,7 @@ extensions="
   bibhasdn.unique-lines
   dbaeumer.vscode-eslint
   DevonDCarew.bazel-code
+  dmitry-korobchenko.prototxt
   eg2.tslint
   joelday.docthis
   ms-python.python
@@ -27,6 +28,7 @@ extensions="
   stkb.rewrap
   wmaurer.change-case
   xaver.clang-format
+  zxh404.vscode-proto3
 "
 for ext in $extensions; do
   if "$CODE" --list-extensions | egrep -q "^$ext\b"; then
