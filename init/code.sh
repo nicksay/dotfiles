@@ -17,12 +17,15 @@ fi
 echo "Installing code extensions..."
 extensions="
   AndrsDC.base16-themes
+  bibhasdn.unique-lines
   dbaeumer.vscode-eslint
   DevonDCarew.bazel-code
   donjayamanne.python
   eg2.tslint
   joelday.docthis
   ms-vscode.cpptools
+  stkb.rewrap
+  wmaurer.change-case
   xaver.clang-format
 "
 for ext in $extensions; do
