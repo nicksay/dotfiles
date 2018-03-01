@@ -26,6 +26,7 @@ extensions="
   joelday.docthis
   ms-python.python
   ms-vscode.cpptools
+  rix0rrr.gcl
   stkb.rewrap
   wmaurer.change-case
   xaver.clang-format
