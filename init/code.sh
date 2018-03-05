@@ -29,6 +29,7 @@ extensions="
   ms-vscode.cpptools
   rix0rrr.gcl
   stkb.rewrap
+  vscjava.vscode-java-pack
   wmaurer.change-case
   xaver.clang-format
   zxh404.vscode-proto3
