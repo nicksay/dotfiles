@@ -27,7 +27,6 @@ extensions="
   mrcrowl.hg
   ms-python.python
   ms-vscode.cpptools
-  rix0rrr.gcl
   stkb.rewrap
   vscjava.vscode-java-pack
   wmaurer.change-case
