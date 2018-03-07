@@ -28,7 +28,6 @@ fi
 
 echo "Installing python packages..."
 packages="
-  gcl-language-server
   numpy
   pylint
   yapf
