@@ -26,12 +26,20 @@ sudo pmset -c displaysleep 10
 defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.701961"
 # Enable full keyboard access for all control (e.g. enable Tab in dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# Disable the "double-space to insert period"
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Make the mouse tracking speed faster
 defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.0
 # Enable right-click when using a Magic Mouse
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string TwoButton
 # Disable three-finger-tap when using the trackpad
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 0
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 0
+# Disable force-touch and haptic feedback when using the trackpad
+defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -bool false
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad ActuateDetents  -bool false
+defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad ForceSuppressed  -bool true
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable quarantine warnings about unidentified developers
@@ -102,7 +110,6 @@ sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate ScheduleFreque
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 # Auto-update apps
 sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool true
-
 
 
 # Kill persistent apps after setting defaults so changes take effect.
