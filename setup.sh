@@ -5,12 +5,15 @@ cd "$(dirname "$0")" # Run from the the script directory.
 
 
 # Sanity check.
-if [[ $(xcode-select --install 2>&1) != *"already installed"* ]]; then
+if xcode-select -p &> /dev/null; then
+  true
+else
   echo >&2 "ERROR: developer tools need to be installed."
   exit 1
 fi
 
 ./install.sh
+source "$HOME/.bashrc"
 
 ./init/defaults.sh
 ./init/brew.sh
