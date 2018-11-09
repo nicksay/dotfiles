@@ -18,7 +18,6 @@ fi
 ./init/node.sh
 ./init/python.sh
 ./init/ruby.sh
-./init/fonts.sh
 ./init/term.sh
 ./init/subl.sh
 ./init/code.sh
