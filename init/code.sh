@@ -27,8 +27,13 @@ extensions="
   mrcrowl.hg
   ms-python.python
   ms-vscode.cpptools
+  ms-vscode.Go
+  redhat.java
   stkb.rewrap
+  vscjava.vscode-java-debug
   vscjava.vscode-java-pack
+  vscjava.vscode-java-test
+  vscjava.vscode-maven
   wmaurer.change-case
   xaver.clang-format
   zxh404.vscode-proto3
