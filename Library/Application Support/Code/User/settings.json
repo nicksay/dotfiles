@@ -9,7 +9,10 @@
     80
   ],
   "files.associations": {
-    "PULLREQ_EDITMSG": "markdown"
+    "PULLREQ_EDITMSG": "markdown",
+    "*.asciiproto": "prototxt",
+    "*.gss": "css",
+    "*.pbtxt": "prototxt",
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": false,
