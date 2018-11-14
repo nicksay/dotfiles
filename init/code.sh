@@ -18,12 +18,14 @@ echo "Installing code extensions..."
 extensions="
   AndrsDC.base16-themes
   bibhasdn.unique-lines
+  cssho.vscode-svgviewer
   dbaeumer.vscode-eslint
   DevonDCarew.bazel-code
   dmitry-korobchenko.prototxt
   donjayamanne.jupyter
   EditorConfig.EditorConfig
   eg2.tslint
+  GrapeCity.gc-excelviewer
   joelday.docthis
   mrcrowl.hg
   ms-python.python
