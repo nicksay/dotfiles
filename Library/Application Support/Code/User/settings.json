@@ -42,17 +42,32 @@
   "workbench.colorTheme": "Base16 Dark Ocean",
   "workbench.editor.tabSizing": "shrink",
   "workbench.startupEditor": "newUntitledFile",
+  "[bazel]": {
+    "editor.tabSize": 4
+  },
   "[git-commit]": {
     "editor.rulers": [
       72,
       80
     ]
   },
+  "[java]": {
+    "editor.rulers": [
+      100
+    ],
+    "editor.formatOnSave": false
+  },
   "[markdown]": {
     "editor.rulers": [
       72,
       80
-    ]
+    ],
+    "editor.tabSize": 4
+  },
+  "[objective-c]": {
+    "editor.rulers": [
+      100
+    ],
   },
   "[python]": {
     "editor.tabSize": 4
