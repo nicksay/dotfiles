@@ -17,7 +17,6 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": false,
   "C_Cpp.formatting": "Disabled",
-  "clang-format.executable": "/usr/local/bin/clang-format",
   "clang-format.fallbackStyle": "Google",
   "clang-format.style": "Google",
   "html.format.enable": false,
