@@ -35,6 +35,7 @@ done
 echo "Installing cask packages..."
 packages="
   caffeine
+  charles
   dropbox
   firefox
   font-source-code-pro
