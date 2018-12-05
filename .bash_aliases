@@ -33,12 +33,22 @@ function _prompt_time() {
 function _prompt_date() {
   date '+%b %d %Z'
 }
+function _prompt_host() {
+  local user_and_host="[\u@\h]"
+  if [[ $USER == "nicksay" ]]; then
+    user_and_host=${user_and_host//\\u@/}
+  fi
+  if [[ -n $HOST ]]; then
+    user_and_host=${user_and_host//\\h/${HOST}}  ## set in .bashrc
+  fi
+  echo "$user_and_host"
+}
 function _prompt_dir() {
-  local dir="${1:-$PWD}"
+  local max=${1:-64}
+  local dir="${2:-$PWD}"
   if [[ "$dir" =~ ^"$HOME" ]]; then
     dir="~${dir#$HOME}"
   fi
-  local max=${2:-64}
   max=$(( max - 4 ))  # account for adding ".../" later
   echo "$dir" | awk -F/ -v MAX=$max '{
     p="";
@@ -53,6 +63,7 @@ function _prompt_dir() {
     printf "%s",p
   }'
 }
+
 function _prompt_vcs() {
   if type -t __git_ps1 &> /dev/null; then
     export GIT_PS1_SHOWDIRTYSTATE=1
@@ -101,28 +112,33 @@ function prompt_customize() {
         local color_start="$(_prompt_color $prompt_color)"
         local color_end="$(_prompt_color)"
       fi
-      local left_width="\$( echo \$(( COLUMNS - (COLUMNS / 3) )) )"
-      local right_width="\$( echo \$(( COLUMNS / 3 )) )"
-      local left_prompt_string="\$(_prompt_time) \$(_prompt_vcs)\$(_prompt_dir)"
-      local right_prompt_string="\$(_prompt_date) [\u@\h]"
-      # Line 1 contains path and status info.
-      local line1_left="\$(printf \"%-*.*s\" $left_width $left_width \"$left_prompt_string\")"
-      local line1_right="\$(printf \"%*.*s\" $right_width $right_width \"$right_prompt_string\")"
-      local line1="${color_start}${line1_left}${line1_right}${color_end}"
-      # Line 2 handles input.
-      local line2="$(_prompt_mark)\$ "
-      PS1="\n${line1}\n${line2}"
+      if [[ -r "$HOME/.bash_command_timer.sh" ]]; then
+        source "$HOME/.bash_command_timer.sh"
+      fi
+      if type -t BCTPostCommand &> /dev/null; then
+        # If using the bash-command-timer, then use a single-sided prompt.
+        local dir_width="\$( echo \$(( COLUMNS - 1 - \$(_prompt_host | wc -c) - \$(_prompt_vcs | wc -c) )) )"
+        local line1="${color_start}\$(_prompt_host) \$(_prompt_vcs)\$(_prompt_dir ${dir_width})${color_end}"
+        local line2="$(_prompt_mark)\$ "
+        PS1="${line1}\n${line2}"
+      else
+        local left_width="\$( echo \$(( COLUMNS - (COLUMNS / 3) )) )"
+        local right_width="\$( echo \$(( COLUMNS / 3 )) )"
+        local left_prompt_string="\$(_prompt_time) \$(_prompt_vcs)\$(_prompt_dir)"
+        local right_prompt_string="\$(_prompt_date) \$(_prompt_host)"
+        # Line 1 contains path and status info.
+        local line1_left="\$(printf \"%-*.*s\" $left_width $left_width \"$left_prompt_string\")"
+        local line1_right="\$(printf \"%*.*s\" $right_width $right_width \"$right_prompt_string\")"
+        local line1="${color_start}${line1_left}${line1_right}${color_end}"
+        # Line 2 handles input.
+        local line2="$(_prompt_mark)\$ "
+        PS1="\n${line1}\n${line2}"
+      fi
       ;;
     *)
       PS1="${prefix}[\u@\h] \w\$ "
       ;;
   esac
-  if [[ $USER == "nicksay" ]]; then
-    PS1=${PS1//\\u@/}
-  fi
-  if [[ -n $HOST ]]; then
-    PS1=${PS1//\\h/${HOST}}  ## set in .bashrc
-  fi
   export PS1;
 }
 
