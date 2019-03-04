@@ -41,6 +41,7 @@ packages="
   font-source-code-pro
   google-chrome
   google-backup-and-sync
+  google-trends
   iterm2
   java
   simplenote
