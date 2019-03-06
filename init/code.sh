@@ -22,7 +22,6 @@ extensions="
   dbaeumer.vscode-eslint
   DevonDCarew.bazel-code
   dmitry-korobchenko.prototxt
-  donjayamanne.jupyter
   EditorConfig.EditorConfig
   eg2.tslint
   GrapeCity.gc-excelviewer
