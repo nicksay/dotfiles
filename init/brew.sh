@@ -50,6 +50,7 @@ packages="
   rbenv
   rename
   simplehttp2server
+  yarn
 "
 for pkg in $packages; do
   if "$BREW" list $pkg &> /dev/null; then
