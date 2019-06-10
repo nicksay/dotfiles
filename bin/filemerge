@@ -1,2 +1,4 @@
 #!/bin/bash
-/Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge "$@"
+
+# Args = -left $other -right $local -ancestor $base -merge $output
+exec /Applications/Xcode.app/Contents/Applications/FileMerge.app/Contents/MacOS/FileMerge "$@"
