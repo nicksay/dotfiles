@@ -102,6 +102,8 @@ defaults write com.apple.dock autohide-time-modifier -float 0.2
 defaults write com.apple.dock springboard-show-duration -float 0.1
 defaults write com.apple.dock springboard-hide-duration -float 0.1
 defaults write com.apple.dock springboard-page-duration -float 0.3
+# Don't show recent applications
+defaults write com.apple.dock show-recents -bool false
 
 
 # App Store / Software Update
