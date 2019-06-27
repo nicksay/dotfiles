@@ -40,6 +40,7 @@ packages="
   firefox
   font-source-code-pro
   google-chrome
+  google-cloud-sdk
   google-backup-and-sync
   google-trends
   iterm2
