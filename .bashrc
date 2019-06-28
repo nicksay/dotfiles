@@ -23,7 +23,10 @@ export PATH="$HOME/.local/bin:$PATH"
 which rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Setup go environment
-export GOPATH="$HOME/Library/Go"
+export GOENV_GOPATH_PREFIX="$HOME/.go"
+which goenv > /dev/null && eval "$(goenv init -)"
+# Define path for go packages
+export PATH="$GOPATH/bin:$PATH"
 
 
 # Prompt customization is done below, using a custom function
