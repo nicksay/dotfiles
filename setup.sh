@@ -18,6 +18,7 @@ source "$HOME/.bashrc"
 ./init/defaults.sh
 ./init/brew.sh
 ./init/cask.sh
+./init/go.sh
 ./init/node.sh
 ./init/python.sh
 ./init/ruby.sh
