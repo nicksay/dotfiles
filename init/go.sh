@@ -28,7 +28,7 @@ fi
 
 echo "Installing go packages..."
 packages="
-  golang.org/x/tools/cmd/gopls
+  golang.org/x/lint/golint
 "
 export GOENV_GOPATH_PREFIX="$HOME/.go"
 eval "$("$GOENV" init -)"
