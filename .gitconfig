@@ -29,6 +29,8 @@
 	prompt = false
 [difftool "opendiff"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\" | cat
+[icdiff]
+	options = --recursive
 
 [filter "media"]
 	clean = git-media-clean %f
