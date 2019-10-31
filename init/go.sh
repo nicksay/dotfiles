@@ -29,6 +29,7 @@ fi
 echo "Installing go packages..."
 packages="
   golang.org/x/lint/golint
+  github.com/GoogleChrome/simplehttp2server
 "
 export GOENV_GOPATH_PREFIX="$HOME/.go"
 eval "$("$GOENV" init -)"
