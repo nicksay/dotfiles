@@ -22,6 +22,8 @@ fi
 
 echo "Tapping homebrew repositories..."
 repositories="
+  homebrew/cask
+  homebrew/cask-fonts
 "
 for repo in $repositories; do
   if "$BREW" tap | fgrep -q -x $repo; then
@@ -31,6 +33,34 @@ for repo in $repositories; do
     "$BREW" tap $repo
   fi
 done
+
+
+echo "Installing cask packages..."
+packages="
+  caffeine
+  charles
+  dropbox
+  firefox
+  font-source-code-pro
+  google-chrome
+  google-cloud-sdk
+  google-backup-and-sync
+  google-trends
+  iterm2
+  java
+  simplenote
+  slack
+  visual-studio-code
+"
+for pkg in $packages; do
+  if "$BREW" cask list $pkg &> /dev/null; then
+    echo ✓  $pkg
+  else
+    echo 📦  $pkg
+    "$BREW" cask install --force $pkg
+  fi
+done
+echo "Cask packages installed."
 
 
 echo "Installing homebrew packages..."
