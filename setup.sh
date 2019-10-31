@@ -9,6 +9,7 @@ if xcode-select -p &> /dev/null; then
   true
 else
   echo >&2 "ERROR: developer tools need to be installed."
+  echo >&2 "Run \"xcode-select --install\" and try again."
   exit 1
 fi
 
