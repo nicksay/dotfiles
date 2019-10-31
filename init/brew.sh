@@ -22,14 +22,13 @@ fi
 
 echo "Tapping homebrew repositories..."
 repositories="
-  googlechrome/simplehttp2server
 "
 for repo in $repositories; do
   if "$BREW" tap | fgrep -q -x $repo; then
     echo ✓  $repo
   else
     echo 📦  $repo
-    "$BREW" tap $repo https://github.com/$repo
+    "$BREW" tap $repo
   fi
 done
 
@@ -49,7 +48,6 @@ packages="
   pyenv
   rbenv
   rename
-  simplehttp2server
   yarn
 "
 for pkg in $packages; do
