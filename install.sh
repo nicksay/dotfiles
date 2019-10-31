@@ -37,7 +37,7 @@ function _copy_dotfiles() {
       | sed -e "s/^${PWD//\//\\/}/${HOME//\//\\/}/" \
       | _mkdir -p
   # Copy files into place.
-  _rsync -avh --no-perms \
+  _rsync -avh --no-perms --chmod=ugo=rwX \
       --exclude ".git/" \
       --exclude ".DS_Store" \
       --exclude "init" \
