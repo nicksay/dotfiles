@@ -862,15 +862,6 @@
 				<key>Red Component</key>
 				<real>0.75</real>
 			</dict>
-			<key>Semantic History</key>
-			<dict>
-				<key>action</key>
-				<string>best editor</string>
-				<key>editor</key>
-				<string>com.sublimetext.3</string>
-				<key>text</key>
-				<string></string>
-			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
 			<key>Shortcut</key>
@@ -1222,15 +1213,6 @@
 				<real>0.75</real>
 				<key>Red Component</key>
 				<real>0.75</real>
-			</dict>
-			<key>Semantic History</key>
-			<dict>
-				<key>action</key>
-				<string>best editor</string>
-				<key>editor</key>
-				<string>com.sublimetext.3</string>
-				<key>text</key>
-				<string></string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
