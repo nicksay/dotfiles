@@ -47,7 +47,6 @@ packages="
   java
   simplenote
   slack
-  sublime-text
   visual-studio-code
 "
 for pkg in $packages; do

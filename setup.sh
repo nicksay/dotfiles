@@ -23,5 +23,4 @@ source "$HOME/.bashrc"
 ./init/python.sh
 ./init/ruby.sh
 ./init/term.sh
-./init/subl.sh
 ./init/code.sh
