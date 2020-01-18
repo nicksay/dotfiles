@@ -37,6 +37,7 @@ done
 
 echo "Installing cask packages..."
 packages="
+  adoptopenjdk8
   caffeine
   charles
   dropbox
@@ -47,7 +48,7 @@ packages="
   google-backup-and-sync
   google-trends
   iterm2
-  java
+  rectangle
   simplenote
   slack
   visual-studio-code
