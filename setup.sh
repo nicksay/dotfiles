@@ -14,7 +14,6 @@ else
 fi
 
 ./install.sh
-source "$HOME/.bashrc"
 
 ./init/defaults.sh
 ./init/brew.sh
@@ -24,3 +23,9 @@ source "$HOME/.bashrc"
 ./init/ruby.sh
 ./init/term.sh
 ./init/code.sh
+
+if [[ "$SHELL" = */zsh ]]; then
+  source "$HOME/.zshrc"
+elif [[ "$SHELL" = */bash ]]; then
+  source "$HOME/.bashrc"
+fi
