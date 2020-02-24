@@ -49,6 +49,7 @@ packages="
   google-trends
   iterm2
   rectangle
+  rocket
   simplenote
   slack
   visual-studio-code
