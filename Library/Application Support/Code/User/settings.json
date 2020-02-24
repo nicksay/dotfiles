@@ -68,6 +68,11 @@
       80
     ]
   },
+  "[html]": {
+    "editor.rulers": [
+      100
+    ]
+  },
   "[java]": {
     "editor.rulers": [
       100
@@ -75,10 +80,6 @@
     "editor.formatOnSave": false
   },
   "[markdown]": {
-    "editor.rulers": [
-      72,
-      80
-    ],
     "editor.tabSize": 4
   },
   "[objective-c]": {
