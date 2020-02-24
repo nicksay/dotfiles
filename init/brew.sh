@@ -72,6 +72,7 @@ packages="
   clang-format
   ctags
   git
+  goenv
   hg
   hub
   icdiff
