@@ -10,7 +10,7 @@ export FPATH="$HOME/local/share/zsh/site-functions:$FPATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set oh-my-zsh theme to load.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="nicksay"
 
 # Use hyphen-insensitive completion (_ and - will be interchangeable).
 HYPHEN_INSENSITIVE="true"
@@ -27,7 +27,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(timer)
 
 # Environnment and aliases are defined as part of oh-my-zsh customization.
 source "$ZSH/oh-my-zsh.sh"
