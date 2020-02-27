@@ -82,6 +82,7 @@ packages="
   rbenv
   rename
   yarn
+  zsh-completions
 "
 for pkg in $packages; do
   if "$BREW" list $pkg &> /dev/null; then
