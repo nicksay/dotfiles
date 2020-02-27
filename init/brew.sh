@@ -83,6 +83,7 @@ packages="
   rename
   yarn
   zsh-completions
+  zsh-history-substring-search
 "
 for pkg in $packages; do
   if "$BREW" list $pkg &> /dev/null; then
