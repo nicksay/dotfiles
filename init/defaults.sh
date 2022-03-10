@@ -91,6 +91,9 @@ chflags nohidden ~/Library
 defaults write com.apple.dock orientation -string "left"
 # Set the icon size of Dock items to 48 pixels
 defaults write com.apple.dock tilesize -int 48
+# Match the default Dock icon size for magnification
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock tilesize -int 48
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 # Automatically hide and show the Dock
