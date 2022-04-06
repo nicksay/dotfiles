@@ -40,17 +40,16 @@ packages="
   adoptopenjdk8
   caffeine
   charles
-  dropbox
   firefox
   font-source-code-pro
   google-chrome
   google-cloud-sdk
-  google-backup-and-sync
+  google-drive
   google-trends
   iterm2
+  mimestream
   rectangle
   rocket
-  simplenote
   slack
   visual-studio-code
 "
