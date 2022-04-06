@@ -119,18 +119,16 @@ function findbytype() {
   [[ -d "$DIR" ]] && find "$DIR" -type $1 -not -path "$DIR" -print || echo 'invalid dir'
 }
 function ff() {
+  local OPTIND
   command=( "find" )
   search="-iname"
   while getopts "e" opt "$@"; do
     search="-iregex"
   done
-  shift $((OPTIND-1))
-  unset OPTSTRING
-  unset OPTIND
-  unset OPTARG
+  shift $((OPTIND - 1))
 
   if [[ "$#" == "0" ]]; then
-    echo "usage: ff -e search_pattern [dir ...]"
+    echo "usage: ff [-e] search_pattern [dir ...]"
     return 1
   fi
 
@@ -144,25 +142,22 @@ function ff() {
     command=( "${command[@]}" "." )
   else
     shift
-    while (( "$#" )); do
+    while (( $# )); do
       command=( "${command[@]}" "$1" )
       shift
     done
-
   fi
   command=( "${command[@]}" "$search" "$pat" "-print" )
 
   "${command[@]}"
 }
 function gr() {
+  local OPTIND
   grep_command=( "egrep" "-rIin" )
   while getopts "clLv" opt "$@"; do
     grep_command=( "${grep_command[@]}" "-$opt" )
   done
-  shift $((OPTIND-1))
-  unset OPTSTRING
-  unset OPTIND
-  unset OPTARG
+  shift $((OPTIND - 1))
 
   if [[ "$#" == "0" ]]; then
     echo "usage: gr [-clLv] search_regex [dir|file ...]"
@@ -180,15 +175,15 @@ function gr() {
     shift
     if [[ "$#" != "0" ]]; then
       find_command=( "find" "$1" )
-      while (( "$#" )); do
+      while (( $# )); do
         find_command=( "${find_command[@]}" "$1" )
         shift
       done
     else
       find_command=( "find" "." )
     fi
-    find_command=( "${find_command[@]}" "-type" "f" "!" "-name" "'*~'" )
-    xargs_command=( "xargs" "-n" "100" "-P" "24" )
+    find_command=( "${find_command[@]}" "-type" "f" "!" "-name" "'*~'" "-print0" )
+    xargs_command=( "xargs" "-0" "-n" "100" "-P" "24" )
     xargs_command=( "${xargs_command[@]}" "${grep_command[@]}" )
     # Faster grep using the "C" locale: byte matching not string comparison.
     LC_ALL=C "${find_command[@]}" | "${xargs_command[@]}" | sort -u
