@@ -58,7 +58,7 @@
     "terminal.ansiBrightCyan": "#75BFAA",
     "terminal.ansiBrightWhite": "#F5F5F5"
   },
-  "workbench.colorTheme": "Base16 Dark Ocean",
+  "workbench.colorTheme": "Ocean Dark Extended",
   "workbench.editor.tabSizing": "shrink",
   "workbench.startupEditor": "newUntitledFile",
   "[bazel]": {
