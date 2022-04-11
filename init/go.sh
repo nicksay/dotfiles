@@ -20,16 +20,16 @@ if "$GOENV" version | cut -d ' ' -f 1 | egrep -q '\d+\.\d+\.\d+'; then
 else
   echo "Installing go..."
   go_version=$("$GOENV" install -l | egrep '\s+\d+\.\d+\.\d+$' | tail -1)
-  "$GOENV" install $go_version
+  "$GOENV" install -f $go_version
   "$GOENV" global $go_version
   echo "Go installed."
 fi
 
 
-echo "Installing go packages..."
+echo "Installing go commands..."
 packages="
-  golang.org/x/lint/golint
-  github.com/GoogleChrome/simplehttp2server
+  golang.org/x/lint/golint@latest
+  github.com/GoogleChrome/simplehttp2server@latest
 "
 export GOENV_GOPATH_PREFIX="$HOME/.go"
 eval "$("$GOENV" init -)"
@@ -38,7 +38,7 @@ for pkg in $packages; do
    echo ✓  $pkg
   else
     echo 📦  $pkg
-    "$GO" get $pkg
+    "$GO" install $pkg
   fi
 done
-echo "Go packages installed."
+echo "Go commands installed."
