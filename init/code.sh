@@ -16,23 +16,35 @@ fi
 
 echo "Installing code extensions..."
 extensions="
-  AndrsDC.base16-themes
+  acarreiro.calculate
+  adammaras.overtype
+  BazelBuild.vscode-bazel
   bibhasdn.unique-lines
+  casualjim.gotemplate
   cssho.vscode-svgviewer
   dbaeumer.vscode-eslint
-  DevonDCarew.bazel-code
   dmitry-korobchenko.prototxt
   EditorConfig.EditorConfig
   eg2.tslint
+  goessner.mdmath
+  golang.go
   GrapeCity.gc-excelviewer
-  joelday.docthis
+  joaompinto.vscode-graphviz
+  kleber-swf.ocean-dark-extended
+  llvm-vs-code-extensions.vscode-clangd
+  maelvalais.autoconf
   mrcrowl.hg
   ms-python.python
+  ms-python.vscode-pylance
+  ms-vscode-remote.remote-ssh
+  ms-vscode-remote.remote-ssh-edit
   ms-vscode.cpptools
-  ms-vscode.Go
+  ms-vscode.vscode-typescript-tslint-plugin
   redhat.java
   stkb.rewrap
+  VisualStudioExptTeam.vscodeintellicode
   vscjava.vscode-java-debug
+  vscjava.vscode-java-dependency
   vscjava.vscode-java-pack
   vscjava.vscode-java-test
   vscjava.vscode-maven
