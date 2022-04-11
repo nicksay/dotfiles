@@ -93,7 +93,7 @@ defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock tilesize -int 48
 # Match the default Dock icon size for magnification
 defaults write com.apple.dock magnification -bool true
-defaults write com.apple.dock tilesize -int 48
+defaults write com.apple.dock largesize -int 48
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 # Automatically hide and show the Dock
@@ -105,6 +105,8 @@ defaults write com.apple.dock autohide-time-modifier -float 0.2
 defaults write com.apple.dock springboard-show-duration -float 0.1
 defaults write com.apple.dock springboard-hide-duration -float 0.1
 defaults write com.apple.dock springboard-page-duration -float 0.3
+# Clear peristant applications
+defaults write com.apple.dock persistent-apps remove
 # Don't show recent applications
 defaults write com.apple.dock show-recents -bool false
 
