@@ -19,7 +19,7 @@ if "$RBENV" version | cut -d ' ' -f 1 | egrep -q '\d+\.\d+\.\d+'; then
   echo "Ruby already installed."
 else
   echo "Installing ruby..."
-  ruby_version=$("$RBENV" install -l | egrep '\s+\d+\.\d+\.\d+$' | tail -1)
+  ruby_version=$("$RBENV" install -l | egrep '^\s*\d+\.\d+\.\d+$' | tail -1)
   "$RBENV" install $ruby_version
   "$RBENV" global $ruby_version
   echo "Ruby installed."
