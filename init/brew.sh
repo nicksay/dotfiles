@@ -35,41 +35,13 @@ for repo in $repositories; do
 done
 
 
-echo "Installing cask packages..."
-packages="
-  adoptopenjdk8
-  caffeine
-  charles
-  firefox
-  font-source-code-pro
-  google-chrome
-  google-cloud-sdk
-  google-drive
-  google-trends
-  iterm2
-  mimestream
-  rectangle
-  rocket
-  slack
-  visual-studio-code
-"
-for pkg in $packages; do
-  if "$BREW" cask list $pkg &> /dev/null; then
-    echo ✓  $pkg
-  else
-    echo 📦  $pkg
-    "$BREW" cask install --force $pkg
-  fi
-done
-echo "Cask packages installed."
-
-
 echo "Installing homebrew packages..."
 packages="
   bazel
   buildifier
   clang-format
   ctags
+  gh
   git
   goenv
   hg
@@ -80,6 +52,7 @@ packages="
   pyenv
   rbenv
   rename
+  svn
   yarn
   zsh-completions
   zsh-history-substring-search
@@ -93,3 +66,32 @@ for pkg in $packages; do
   fi
 done
 echo "Homebrew packages installed."
+
+
+echo "Installing cask packages..."
+packages="
+  caffeine
+  charles
+  firefox
+  font-source-code-pro
+  google-chrome
+  google-cloud-sdk
+  google-drive
+  google-trends
+  iterm2
+  mimestream
+  rectangle
+  rocket
+  slack
+  temurin
+  visual-studio-code
+"
+for pkg in $packages; do
+  if "$BREW" cask list $pkg &> /dev/null; then
+    echo ✓  $pkg
+  else
+    echo 📦  $pkg
+    "$BREW" install --cask --force $pkg
+  fi
+done
+echo "Cask packages installed."
