@@ -57,7 +57,8 @@ if [[ -e "$OH_MY_ZSH" ]]; then
 else
   echo 📦  oh-my-zsh
   url="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-  sh -c "$(curl -sL $url)"
+  # Note: unset $ZSH to avoid triggering a saftey check during install
+  RUNZSH=no sh -c "$(curl -sL $url)"
 fi
 echo "Shell customization installed."
 
