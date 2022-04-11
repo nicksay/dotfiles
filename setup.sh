@@ -13,19 +13,20 @@ else
   exit 1
 fi
 
-./install.sh
-
 ./init/defaults.sh
 ./init/brew.sh
+./init/term.sh
+./init/code.sh
 ./init/go.sh
 ./init/node.sh
 ./init/python.sh
 ./init/ruby.sh
-./init/term.sh
-./init/code.sh
 
+./install.sh
+
+echo "Run the following to complete setup:"
 if [[ "$SHELL" = */zsh ]]; then
-  source "$HOME/.zshrc"
+  echo source "\"$HOME/.zshrc\""
 elif [[ "$SHELL" = */bash ]]; then
-  source "$HOME/.bashrc"
+  echo source "\"$HOME/.bashrc\""
 fi
