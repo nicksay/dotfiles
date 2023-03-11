@@ -27,7 +27,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins to load.
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-completions zsh-history-substring-search)
+plugins=(google-cloud-sdk zsh-completions zsh-history-substring-search)
 
 # Ignore warnings about completion directory permissions.
 ZSH_DISABLE_COMPFIX=true
