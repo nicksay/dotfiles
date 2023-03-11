@@ -4,7 +4,7 @@
 alias ..='cd ..'
 alias cd..='cd ..'
 function mkcd() { mkdir -p "$1" && cd "$1"; }
-alias e='$EDITOR'
+alias e='${${(z)EDITOR}[1]}'  # First word of the current $EDITOR value
 alias more='less'
 alias q='exit'
 alias sym='ln -s'
