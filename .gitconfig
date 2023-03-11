@@ -3,7 +3,7 @@
 	email = nicksay@gmail.com
 
 [core]
-	excludesfile = /Users/nicksay/.gitignore
+	excludesfile = ~/.gitignore
 
 [color]
 	branch = auto
