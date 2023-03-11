@@ -4,8 +4,8 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-LOCAL="$HOME/local"
-BREW="$LOCAL/bin/brew"
+HOMEBREW_PREFIX="/opt/homebrew"
+BREW="$HOMEBREW_PREFIX/bin/brew"
 
 
 echo
@@ -13,9 +13,7 @@ if [[ -e "$BREW" ]]; then
   echo "Homebrew already installed."
 else
   echo "Installing homebrew..."
-  mkdir -p "$LOCAL"
-  homebrew_url="https://github.com/Homebrew/brew/tarball/master"
-  curl -sL "$homebrew_url" | tar xz --strip 1 -C "$LOCAL"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "Homebrew installed."
 fi
 

@@ -4,8 +4,8 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-LOCAL="$HOME/local"
-PYENV="$LOCAL/bin/pyenv"
+HOMEBREW_PREFIX="/opt/homebrew"
+PYENV="$HOMEBREW_PREFIX/bin/pyenv"
 PIP="$HOME/.pyenv/shims/pip"
 
 

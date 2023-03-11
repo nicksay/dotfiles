@@ -4,8 +4,8 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-LOCAL="$HOME/local"
-GOENV="$LOCAL/bin/goenv"
+HOMEBREW_PREFIX="/opt/homebrew"
+GOENV="$HOMEBREW_PREFIX/bin/goenv"
 GO="$HOME/.goenv/shims/go"
 
 

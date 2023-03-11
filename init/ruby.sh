@@ -4,9 +4,10 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-LOCAL="$HOME/local"
-RBENV="$LOCAL/bin/rbenv"
+HOMEBREW_PREFIX="/opt/homebrew"
+RBENV="$HOMEBREW_PREFIX/bin/rbenv"
 GEM="$HOME/.rbenv/shims/gem"
+PATH="$HOMEBREW_PREFIX/bin:$PATH"
 
 
 echo

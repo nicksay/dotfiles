@@ -4,8 +4,9 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-LOCAL="$HOME/local"
-NPM="$LOCAL/bin/npm"
+HOMEBREW_PREFIX="/opt/homebrew"
+NPM="$HOMEBREW_PREFIX/bin/npm"
+PATH="$HOMEBREW_PREFIX/bin:$PATH"
 
 
 echo
