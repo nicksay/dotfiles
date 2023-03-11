@@ -46,9 +46,11 @@ packages="
   hub
   icdiff
   jq
+  libyaml
   node
   pyenv
   rbenv
+  ruby-build
   rename
   svn
   yarn
