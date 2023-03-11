@@ -70,20 +70,22 @@ echo "Homebrew packages installed."
 
 echo "Installing cask packages..."
 packages="
+  brave-browser
   caffeine
   charles
+  cron
   firefox
   font-source-code-pro
   google-chrome
   google-cloud-sdk
   google-drive
-  google-trends
   iterm2
   mimestream
   rectangle
   rocket
   slack
   temurin
+  topnotch
   visual-studio-code
 "
 for pkg in $packages; do
