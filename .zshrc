@@ -1,13 +1,18 @@
 #!/bin/zsh
 
-# Location of oh-my-zsh installation, defined first to use in FPATH, etc.
-export ZSH="$HOME/.oh-my-zsh"
+HOMEBREW_PREFIX="/opt/homebrew"
+if [[ -x $HOMEBREW_PREFIX/bin/brew ]]; then
+  eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+fi
 
-export PATH="$HOME/local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/local/bin:$HOME/bin:$PATH"
 
-export FPATH="$ZSH/custom/functions:$HOME/local/share/zsh/site-functions:$FPATH"
+export FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 
 ######################## begin oh-my-zsh configuration ########################
+
+# Set oh-my-zsh location.
+ZSH="$HOME/.oh-my-zsh"
 
 # Set theme to load.
 ZSH_THEME="nicksay"
@@ -23,6 +28,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Plugins to load.
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(zsh-completions zsh-history-substring-search)
+
+# Ignore warnings about completion directory permissions.
+ZSH_DISABLE_COMPFIX=true
 
 # Environnment and aliases are defined in $ZSH/custom.
 source "$ZSH/oh-my-zsh.sh"

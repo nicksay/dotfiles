@@ -1,5 +1,8 @@
-# Add the local homebrew directory for zsh-completions to FPATH.
+# Add the homebrew directory for zsh-completions to FPATH.
 () {
-  local dir="${1:h}/../../../../local/share/zsh-completions"
-  fpath+="${dir:A}"
+  if type brew &>/dev/null; then
+    export FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+  else
+    echo "Warning: unable to find 'brew' command when loading 'zsh-completions.plugin.zsh'." >&2
+  fi
 } "$0"

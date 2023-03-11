@@ -4,8 +4,8 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-LOCAL="$HOME/local"
-CODE="$LOCAL/bin/code"
+HOMEBREW_PREFIX="/opt/homebrew"
+CODE="$HOMEBREW_PREFIX/bin/code"
 
 echo
 if [[ ! -e "$CODE" ]]; then
