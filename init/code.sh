@@ -21,7 +21,6 @@ extensions="
   BazelBuild.vscode-bazel
   bibhasdn.unique-lines
   casualjim.gotemplate
-  cssho.vscode-svgviewer
   dbaeumer.vscode-eslint
   dmitry-korobchenko.prototxt
   EditorConfig.EditorConfig
