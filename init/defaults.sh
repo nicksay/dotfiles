@@ -55,10 +55,6 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.controlstrip MiniCustomized -array com.apple.system.brightness com.apple.system.volume com.apple.system.screen-lock
 
 
-# Screensaver (installed separately)
-defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName "Google Trends" path "/Users/nicksay/Library/Screen Savers/Google Trends.saver" type 0
-
-
 # Finder
 
 # Set Home as the default location for new Finder windows
