@@ -18,9 +18,9 @@ killall "App Store" "System Preferences" &> /dev/null || true
 
 # Global
 
-# Power Adapter: Prevent computer from sleeping automatically
+# Using charger (-c): Prevent computer from sleeping automatically
 sudo pmset -c sleep 0
-# Power Adapter: Turn display off after 10 minutes
+# Using charger (-c): Turn display off after 10 minutes
 sudo pmset -c displaysleep 10
 # Set highlight color to orange
 defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.701961"
@@ -97,7 +97,7 @@ defaults write com.apple.dock autohide-time-modifier -float 0.2
 defaults write com.apple.dock springboard-show-duration -float 0.1
 defaults write com.apple.dock springboard-hide-duration -float 0.1
 defaults write com.apple.dock springboard-page-duration -float 0.3
-# Clear peristant applications
+# Clear persistent applications
 defaults write com.apple.dock persistent-apps remove
 # Don't show recent applications
 defaults write com.apple.dock show-recents -bool false
