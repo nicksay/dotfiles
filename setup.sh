@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
