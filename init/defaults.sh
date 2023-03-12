@@ -51,10 +51,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 
-# Touch Bar / Control Strip
-defaults write com.apple.controlstrip MiniCustomized -array com.apple.system.brightness com.apple.system.volume com.apple.system.screen-lock
-
-
 # Finder
 
 # Set Home as the default location for new Finder windows
