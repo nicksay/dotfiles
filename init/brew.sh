@@ -54,6 +54,7 @@ packages="
   rename
   svn
   yarn
+  zed
   zsh-completions
   zsh-history-substring-search
 "

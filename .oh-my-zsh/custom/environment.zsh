@@ -39,7 +39,7 @@ export PAGER="less -FJMRWXs -x4"
 export HOST="$(hostname | tr A-Z a-z | cut -d. -f1-2)"
 
 # Set the default editor.
-export EDITOR="code -w"
+export EDITOR="zed -w"
 
 # Enable iTerm2 shell integration.
 if [[ -r "$HOME/.iterm2/shell_integration.zsh" ]]; then

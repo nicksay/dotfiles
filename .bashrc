@@ -151,7 +151,7 @@ HOST=$(hostname | tr A-Z a-z | cut -d. -f1-2)
 export HOST
 
 # Set the default editor
-export EDITOR="code -w"
+export EDITOR="zed -w"
 
 # Install custom functions and aliases
 if [[ -r "$HOME/.bash_aliases" ]]; then

@@ -1,0 +1,15 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-l": "editor::ScrollCursorCenter",
+      "ctrl-/": "editor::LineDown",
+      "ctrl-'": "editor::LineUp",
+      "ctrl-[": "editor::Outdent",
+      "ctrl-]": "editor::Indent",
+      "ctrl-cmd-n": "editor::MoveLineDown",
+      "ctrl-cmd-p": "editor::MoveLineUp",
+      "cmd-shift-d": "editor::DuplicateLineDown"
+    }
+  }
+]
