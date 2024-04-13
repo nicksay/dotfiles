@@ -84,6 +84,7 @@ packages="
   mimestream
   rectangle
   rocket
+  rustup
   slack
   temurin
   topnotch

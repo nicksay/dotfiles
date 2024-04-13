@@ -28,6 +28,9 @@ which goenv > /dev/null && eval "$(goenv init -)"
 # Define path for go packages
 export PATH="$GOPATH/bin:$PATH"
 
+# Define path for rust packages
+export PATH="$HOME/.cargo/bin:$PATH"
+
 
 # Prompt customization is done below, using a custom function
 
