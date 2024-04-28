@@ -106,14 +106,13 @@
 	unmerged-abort = merge --abort
 
 	# Branches and GitHub Pull Requests.
-	new = !git checkout master && git checkout -b
+	new = new
 	sync = sync
 	prep = prepare
 	prepare = prepare
 	req = hub-pull-request
-	hub-pull-request = hub-pull-request
 	tidy = tidy
-	done = !git checkout master && git sync && git tidy
+	done = done
 
 	# Config.
 	# -- Show these aliases.
