@@ -76,7 +76,15 @@ packages="
   caffeine
   charles
   firefox
+  font-inter
+  font-inter-tight
+  font-noto-mono
+  font-noto-sans
+  font-noto-sans-mono
+  font-noto-serif
   font-source-code-pro
+  font-zed-mono
+  font-zed-sans
   google-chrome
   google-cloud-sdk
   google-drive
