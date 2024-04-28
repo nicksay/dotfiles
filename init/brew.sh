@@ -75,7 +75,6 @@ packages="
   brave-browser
   caffeine
   charles
-  cron
   firefox
   font-source-code-pro
   google-chrome
@@ -83,12 +82,15 @@ packages="
   google-drive
   iterm2
   mimestream
+  notion-calendar
   rectangle
   rocket
   slack
+  signal
   temurin
   topnotch
   visual-studio-code
+  zed
 "
 for pkg in $packages; do
   if "$BREW" cask list $pkg &> /dev/null; then
