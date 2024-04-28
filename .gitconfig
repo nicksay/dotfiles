@@ -2,6 +2,9 @@
 	name = Alex Nicksay
 	email = nicksay@gmail.com
 
+[init]
+	defaultBranch = main
+
 [core]
 	excludesfile = ~/.gitignore
 
