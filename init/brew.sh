@@ -50,8 +50,9 @@ packages="
   node
   pyenv
   rbenv
-  ruby-build
   rename
+  ruby-build
+  rustup-init
   svn
   yarn
   zed
@@ -84,7 +85,6 @@ packages="
   mimestream
   rectangle
   rocket
-  rustup
   slack
   temurin
   topnotch
