@@ -41,6 +41,7 @@ packages="
   ctags
   gh
   git
+  git-filter-repo
   goenv
   hg
   hub
@@ -53,6 +54,8 @@ packages="
   rename
   ruby-build
   rustup-init
+  sqlite
+  sqlite-utils
   svn
   yarn
   zed
