@@ -29,6 +29,9 @@
   "language_overrides": {
     "Git Commit": {
       "wrap_guides": [72]
+    },
+    "Go": {
+      "hard_tabs": true
     }
   }
 }
