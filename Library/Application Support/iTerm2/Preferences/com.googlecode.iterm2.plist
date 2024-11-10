@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>BracketedPasteMode</key>
+	<key>BracketedPasteMode</key>
 	<true/>
 	<key>ClosingTmuxTabKillsTmuxWindows</key>
 	<true/>
@@ -815,7 +815,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodeProRoman-Regular 13</string>
+			<string>Zed-Mono-Extended 13</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1160,6 +1160,13 @@
 			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Jobs to Ignore</key>
+			<array>
+				<string>rlogin</string>
+				<string>ssh</string>
+				<string>slogin</string>
+				<string>telnet</string>
+			</array>
 			<key>Link Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1303,12 +1310,12 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-  <key>Print In Black And White</key>
+	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
