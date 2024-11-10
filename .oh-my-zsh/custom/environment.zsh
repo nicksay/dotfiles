@@ -3,9 +3,6 @@
 # Setup python environment.
 export PYTHONSTARTUP="$HOME/.pystartup"
 which pyenv > /dev/null && eval "$(pyenv init -)"
-export PYENV_ROOT="$HOME/.pyenv/shims"
-export PIPENV_PYTHON="$PYENV_ROOT/python"
-export PATH="$PYENV_ROOT:$PATH"
 # Define path for system python user packages (lower priority).
 system_python_version=$(/usr/bin/python -V 2>&1 | cut -c 8-10)
 export PATH="$PATH:$HOME/Library/Python/${system_python_version}/bin"
