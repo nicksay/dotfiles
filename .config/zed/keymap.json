@@ -3,6 +3,7 @@
     "context": "Editor",
     "bindings": {
       "ctrl-l": "editor::ScrollCursorCenter",
+      "ctrl-o": ["workspace::SendKeystrokes", "enter up end"],
       "ctrl-/": "editor::LineDown",
       "ctrl-'": "editor::LineUp",
       "ctrl-[": "editor::Outdent",
