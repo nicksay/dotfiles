@@ -75,9 +75,6 @@ echo "Homebrew packages installed."
 
 echo "Installing cask packages..."
 packages="
-  brave-browser
-  caffeine
-  charles
   firefox
   font-inter
   font-inter-tight
@@ -95,10 +92,8 @@ packages="
   mimestream
   notion-calendar
   rectangle
-  rocket
   slack
   signal
-  temurin
   topnotch
   visual-studio-code
   zed
