@@ -48,6 +48,7 @@ packages="
   icdiff
   jq
   libyaml
+  marked
   node
   pyenv
   rbenv
