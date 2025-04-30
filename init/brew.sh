@@ -40,6 +40,7 @@ packages="
   clang-format
   ctags
   gh
+  ghostty
   git
   git-filter-repo
   goenv
