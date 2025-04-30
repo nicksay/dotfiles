@@ -2,15 +2,28 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-l": "editor::ScrollCursorCenter",
-      "ctrl-o": ["workspace::SendKeystrokes", "enter up end"],
-      "ctrl-/": "editor::LineDown",
+      "alt-b": "editor::MoveToPreviousWordStart",
+      "alt-f": "editor::MoveToNextWordEnd",
+      "alt-shift-b": "editor::SelectToPreviousWordStart",
+      "alt-shift-f": "editor::SelectToNextWordEnd",
+
+      "alt-d": "editor::DeleteToNextWordEnd",
+      "alt-h": "editor::DeleteToPreviousWordStart",
+
+      "cmd-shift-d": "editor::DuplicateLineDown",
+
       "ctrl-'": "editor::LineUp",
+      "ctrl-/": "editor::LineDown",
+
       "ctrl-[": "editor::Outdent",
       "ctrl-]": "editor::Indent",
+
       "ctrl-cmd-n": "editor::MoveLineDown",
       "ctrl-cmd-p": "editor::MoveLineUp",
-      "cmd-shift-d": "editor::DuplicateLineDown"
+
+      "ctrl-l": "editor::ScrollCursorCenter",
+
+      "ctrl-o": ["workspace::SendKeystrokes", "enter up end"]
     }
   }
 ]
