@@ -36,7 +36,6 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "Source Code Pro, Monaco, monospace",
   "terminal.integrated.fontSize": 13,
-  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#252525",
     "statusBar.noFolderBackground": "#252525",
@@ -58,7 +57,6 @@
     "terminal.ansiBrightCyan": "#75BFAA",
     "terminal.ansiBrightWhite": "#F5F5F5"
   },
-  "workbench.colorTheme": "Ocean Dark Extended",
   "workbench.editor.tabSizing": "shrink",
   "workbench.startupEditor": "newUntitledFile",
   "[bazel]": {
