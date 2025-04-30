@@ -8,29 +8,37 @@
 // from the command palette or from `Zed` application menu.
 {
   "features": {
-    "inline_completion_provider": "supermaven"
+    "edit_prediction_provider": "zed"
   },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
-  "inline_completions": {
-    "disabled_globs": [".env"]
+  "edit_predictions": {
+    "disabled_globs": ["**/.env"]
   },
+  "theme": "One Dark",
   "buffer_font_size": 13,
   "buffer_font_features": {
     // Disable ligatures:
     "calt": false
   },
   "wrap_guides": [80],
-  "language_overrides": {
+  "languages": {
     "Git Commit": {
       "wrap_guides": [72]
     },
     "Go": {
+      "hard_tabs": true
+    },
+    "Markdown": {
+      "soft_wrap": "editor_width",
+      "remove_trailing_whitespace_on_save": false
+    },
+    "Plain Text": {
       "hard_tabs": true
     }
   }
