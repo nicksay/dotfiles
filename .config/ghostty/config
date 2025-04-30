@@ -1,0 +1,13 @@
+font-size = 13
+font-family = "Zed Mono"
+font-style = "Extended"
+font-style-bold = "Bold Extended"
+font-style-italic = "Extended Italic"
+font-style-bold-italic = "Bold Extended Italic"
+
+theme = "SpaceGray Bright"
+
+window-height = 36
+window-width = 164
+
+macos-option-as-alt = left
