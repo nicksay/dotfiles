@@ -35,6 +35,7 @@ done
 
 echo "Installing homebrew packages..."
 packages="
+  awscli
   bazel
   buildifier
   clang-format
@@ -43,15 +44,20 @@ packages="
   ghostty
   git
   git-filter-repo
+  glab
   goenv
+  helm
   hg
   hub
   icdiff
+  kubectl
+  kubectx
   jq
   libyaml
   marked
   node
   pyenv
+  pyenv-virtualenv
   rbenv
   rename
   ruby-build
@@ -93,7 +99,6 @@ packages="
   iterm2
   mimestream
   notion-calendar
-  rectangle
   slack
   signal
   topnotch
