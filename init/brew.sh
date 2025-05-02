@@ -36,7 +36,7 @@ done
 echo "Installing homebrew packages..."
 packages="
   awscli
-  bazel
+  bazelisk
   buildifier
   clang-format
   ctags
@@ -56,6 +56,7 @@ packages="
   libyaml
   marked
   node
+  openjdk
   pyenv
   pyenv-virtualenv
   rbenv
