@@ -35,6 +35,7 @@ packages="
   libssh2-1
   libssl-dev
   libtool-bin
+  libyaml-dev
   llvm
   netcat
   openjdk-11-jdk
