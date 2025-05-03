@@ -60,8 +60,8 @@ packages="
   jq
   libyaml
   marked
-  node
   openjdk
+  pnpm
   pyenv
   pyenv-virtualenv
   rbenv

@@ -4,30 +4,41 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
-HOMEBREW_PREFIX="/opt/homebrew"
-NPM="$HOMEBREW_PREFIX/bin/npm"
-PATH="$HOMEBREW_PREFIX/bin:$PATH"
-
-
-echo
-if [[ ! -e "$NPM" ]]; then
-  echo "WARNING: npm not found."
-  exit
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  HOMEBREW_PREFIX="/opt/homebrew"
+  PNPM="$HOMEBREW_PREFIX/bin/pnpm"
+  if [[ ! -e "$PNPM" ]]; then
+    echo
+    echo "WARNING: pnpm not found."
+    exit
+  fi
+else
+  PNPM="$HOME/.local/share/pnpm/pnpm"
+  if [[ ! -e "$PNPM" ]]; then
+    echo "Installing pnpm..."
+    /bin/bash -c "$(curl -fsSL https://get.pnpm.io/install.sh)"
+    echo "pnpm installed."
+  fi
 fi
 
+"$PNPM" env use --global latest
 
 echo "Installing node packages..."
 packages="
   eslint
-  tslint
   typescript
 "
+if [[ "$(uname -s)" == "Linux" ]]; then
+  packages="$packages
+    @bazel/bazelisk
+  "
+fi
 for pkg in $packages; do
-  if "$NPM" ls -g --parseable $pkg > /dev/null; then
+  if "$PNPM" ls -g --parseable $pkg | egrep "$pkg\$" > /dev/null; then
     echo ✓  $pkg
   else
     echo 📦  $pkg
-    "$NPM" install $pkg
+    "$PNPM" install -g $pkg
   fi
 done
-echo "Node packages installed."
+echo "node packages installed."
