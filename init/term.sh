@@ -3,13 +3,17 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
+if [[ "$(uname -s)" != "Darwin" ]]; then
+    echo "Skipping terminal theme."
+    exit 0
+fi
 
-BCT_SHELL="$HOME/.bash_command_timer.sh"
+
 ITERM2_PREFS="$HOME/Library/Application Support/iTerm2/Preferences/com.googlecode.iterm2.plist"
 ITERM2_SHELL_DIR="$HOME/.iterm2/"
 ITERM2_SHELL_BASH="$HOME/.iterm2/shell_integration.bash"
 ITERM2_SHELL_ZSH="$HOME/.iterm2/shell_integration.zsh"
-OH_MY_ZSH="$HOME/.oh-my-zsh/oh-my-zsh.sh"
+
 TERMINAL_PREFS="$HOME/Library/Preferences/com.apple.Terminal.plist"
 
 
@@ -42,25 +46,6 @@ else
 END_OF_SCRIPT
 fi
 echo "Terminal theme installed."
-
-echo
-echo "Installing shell customization..."
-if [[ -e "$BCT_SHELL" ]]; then
-  echo ✓  bash-command-timer
-else
-  echo 📦  bash-command-timer
-  url="https://raw.githubusercontent.com/jichu4n/bash-command-timer/master/bash_command_timer.sh"
-  curl -sL "$url" -o "$BCT_SHELL"
-fi
-if [[ -e "$OH_MY_ZSH" ]]; then
-  echo ✓  oh-my-zsh
-else
-  echo 📦  oh-my-zsh
-  url="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-  # Note: unset $ZSH to avoid triggering a saftey check during install
-  RUNZSH=no sh -c "$(curl -sL $url)"
-fi
-echo "Shell customization installed."
 
 echo
 echo "Installing shell integration..."

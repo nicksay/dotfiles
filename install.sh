@@ -8,6 +8,7 @@ cd "$(dirname "$0")"
 
 DRYRUN=0
 FORCE=0
+OSNAME="$(uname -s)"
 
 
 function _mkdir() {
@@ -33,17 +34,27 @@ function _rsync() {
 function _copy_dotfiles() {
   echo "Copying dotfiles..."
   # Make needed directories.
-  find "$PWD" -mindepth 1 -type d -not -path '*.git*' \
+  find "$PWD/shared" -mindepth 1 -type d -not -path '*.git*' \
       | sed -e "s/^${PWD//\//\\/}/${HOME//\//\\/}/" \
       | _mkdir -p
+  case "$OSNAME" in
+    "Darwin")
+      find "$PWD/macos" -mindepth 1 -type d -not -path '*.git*' \
+          | sed -e "s/^${PWD//\//\\/}/${HOME//\//\\/}/" \
+          | _mkdir -p
+      ;;
+  esac
   # Copy files into place.
   _rsync -avh --no-perms --chmod=ugo=rwX \
-      --exclude ".git/" \
       --exclude ".DS_Store" \
-      --exclude "init" \
-      --exclude "install.sh" \
-      --exclude "setup.sh" \
-      "$PWD/" "$HOME/";
+      "$PWD/shared/" "$HOME/";
+  case "$OSNAME" in
+    "Darwin")
+      _rsync -avh --no-perms --chmod=ugo=rwX \
+          --exclude ".DS_Store" \
+          "$PWD/macos/" "$HOME/";
+          ;;
+  esac
   echo "Dotfiles copied."
 }
 

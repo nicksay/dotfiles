@@ -3,6 +3,11 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
+if [[ "$(uname -s)" != "Darwin" ]]; then
+    echo "Skipping defaults."
+    exit 0
+fi
+
 
 echo
 echo "Setting defaults..."

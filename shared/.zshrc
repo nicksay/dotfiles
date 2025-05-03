@@ -29,10 +29,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   google-cloud-sdk
-  one-password
   zsh-completions
   zsh-history-substring-search
 )
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  plugins+=(
+    one-password
+  )
+fi
 
 # Ignore warnings about completion directory permissions.
 ZSH_DISABLE_COMPFIX=true

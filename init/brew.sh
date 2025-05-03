@@ -3,6 +3,11 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
+if [[ "$(uname -s)" != "Darwin" ]]; then
+    echo "Skipping homebrew installation."
+    exit 0
+fi
+
 
 HOMEBREW_PREFIX="/opt/homebrew"
 BREW="$HOMEBREW_PREFIX/bin/brew"

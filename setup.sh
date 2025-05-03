@@ -3,17 +3,19 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
-
 # Sanity check.
-if xcode-select -p &> /dev/null; then
-  true
-else
-  echo >&2 "ERROR: developer tools need to be installed."
-  echo >&2 "Run \"xcode-select --install\" and try again."
-  exit 1
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    if xcode-select -p &> /dev/null; then
+        true
+    else
+        echo >&2 "ERROR: developer tools need to be installed."
+        echo >&2 "Run \"xcode-select --install\" and try again."
+        exit 1
+    fi
 fi
 
 ./init/defaults.sh
+./init/shell.sh
 ./init/brew.sh
 ./init/term.sh
 ./init/code.sh
