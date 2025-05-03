@@ -17,6 +17,7 @@ fi
 ./init/defaults.sh
 ./init/shell.sh
 ./init/brew.sh
+./init/apt.sh
 ./init/term.sh
 ./init/code.sh
 ./init/go.sh
