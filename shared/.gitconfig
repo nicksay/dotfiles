@@ -75,7 +75,7 @@
 	#  $* = commit message words (defaults to "SAVEPOINT"); words do not have
 	#   to be quoted: `git quicksave write some code` creates a commit
 	#   with the message "add some code"
-	quicksave = "!_() { git add -A && git commit -m \"${1-SAVEPOINT} ${*:2}\"; }; _"
+	quicksave = "!_() { git add -A && ( [ $# -gt 1 ] && git commit -m \"$*\" || git commit -m \"${1-SAVEPOINT}\"; ); }; _"
 	# -- Commit all changes as fixup of a previous commit.
 	#  $* = previous commit reference (defaults to HEAD)
 	fixup = "!_() { git add -A && git commit --fixup ${1-HEAD}; }; _"
