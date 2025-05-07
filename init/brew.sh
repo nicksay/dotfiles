@@ -25,8 +25,6 @@ fi
 
 echo "Tapping homebrew repositories..."
 repositories="
-  homebrew/cask
-  homebrew/cask-fonts
 "
 for repo in $repositories; do
   if "$BREW" tap | fgrep -q -x $repo; then
@@ -116,7 +114,7 @@ for pkg in $packages; do
     echo ✓  $pkg
   else
     echo 📦  $pkg
-    "$BREW" install --cask --force $pkg
+    "$BREW" install --cask $pkg
   fi
 done
 echo "Cask packages installed."
