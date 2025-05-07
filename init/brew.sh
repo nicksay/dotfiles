@@ -53,12 +53,15 @@ packages="
   hg
   hub
   icdiff
+  jq
+  just
   kubectl
   kubectx
-  jq
+  lima
   libyaml
   marked
   openjdk
+  podman
   pnpm
   pyenv
   pyenv-virtualenv
@@ -103,6 +106,7 @@ packages="
   iterm2
   mimestream
   notion-calendar
+  podman-desktop
   slack
   signal
   topnotch
