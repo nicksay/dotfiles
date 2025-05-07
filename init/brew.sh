@@ -112,7 +112,7 @@ packages="
   zed
 "
 for pkg in $packages; do
-  if "$BREW" cask list $pkg &> /dev/null; then
+  if "$BREW" list --cask $pkg &> /dev/null; then
     echo ✓  $pkg
   else
     echo 📦  $pkg
