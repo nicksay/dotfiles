@@ -65,6 +65,7 @@ packages="
   pnpm
   pyenv
   pyenv-virtualenv
+  qemu
   rbenv
   rename
   ruby-build
