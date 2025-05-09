@@ -72,6 +72,7 @@ echo "apt packages installed."
 
 echo "Installing snap packages..."
 packages="
+  glab
   helm
   just
 "
