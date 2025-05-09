@@ -6,6 +6,16 @@ cd "$(dirname "$0")" # Run from the the script directory.
 BCT_SHELL="$HOME/.bash_command_timer.sh"
 OH_MY_ZSH="$HOME/.oh-my-zsh/oh-my-zsh.sh"
 
+if [[ "$(uname -s)" == "Linux" ]]; then
+  if which zsh &> /dev/null; then
+    echo "zsh found."
+  else
+    echo "Installing zsh..."
+    sudo apt install zsh
+    echo "zsh installed."
+  fi
+fi
+
 echo
 echo "Installing shell customization..."
 if [[ -e "$BCT_SHELL" ]]; then
