@@ -25,6 +25,7 @@ packages="
   flex
   g++
   gcc
+  gh
   git
   gnupg
   iputils-ping
