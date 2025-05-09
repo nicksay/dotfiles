@@ -21,7 +21,7 @@ else
   fi
 fi
 
-"$PNPM" env use --global latest
+bash -i -c "\"$PNPM\" env use --global latest"
 
 echo "Installing node packages..."
 packages="
