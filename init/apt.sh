@@ -74,6 +74,7 @@ packages="
   helm
   just
 "
+# sudo snap refresh
 for pkg in $packages; do
   if snap list $pkg &> /dev/null; then
     echo ✓  $pkg
