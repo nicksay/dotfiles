@@ -31,6 +31,9 @@ export PATH="$GOPATH/bin:$PATH"
 # Define path for rust packages
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Setup node enironment.
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 # Prompt customization is done below, using a custom function
 

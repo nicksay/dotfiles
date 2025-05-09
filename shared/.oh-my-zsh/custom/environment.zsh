@@ -12,14 +12,18 @@ export PATH="$HOME/.local/bin:$PATH"
 # Setup ruby environment.
 which rbenv > /dev/null && eval "$(rbenv init -)"
 
-# Setup go environment.
+# Setup go environment.
 export GOENV_GOPATH_PREFIX="$HOME/.go"
 which goenv > /dev/null && eval "$(goenv init -)"
-# Define path for go packages
+# Define path for go packages.
 export PATH="$GOPATH/bin:$PATH"
 
-# Define path for rust packages
+# Define path for rust packages.
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Setup node enironment.
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 # Make less behave better:
 #   F: quit if fit on one screen
