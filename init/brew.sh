@@ -99,6 +99,8 @@ packages="
   font-noto-sans-mono
   font-noto-serif
   font-source-code-pro
+  font-source-sans-3
+  font-source-serif-4
   font-zed-mono
   font-zed-sans
   google-chrome
