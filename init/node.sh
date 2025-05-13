@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
@@ -22,8 +22,8 @@ else
 fi
 
 echo "Setting up pnpm..."
-PNPM_HOME="$HOME/.local/share/pnpm"
-PATH="$PNPM_HOME:$PATH"
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 "$PNPM" setup
 
 echo "Installing node..."
