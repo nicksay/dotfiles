@@ -9,7 +9,6 @@ if [[ "$(uname -s)" != "Linux" ]]; then
 fi
 
 echo "Installing apt packages..."
-
 packages="
   autoconf
   automake
@@ -66,7 +65,7 @@ for pkg in $packages; do
 done
 if [[ "$pkgs_to_install" != "" ]]; then
   sudo apt update
-  sudo apt install -y $pkgs_to_install
+  sudo NEEDRESTART_MODE=a apt install -y $pkgs_to_install
 fi
 echo "apt packages installed."
 
