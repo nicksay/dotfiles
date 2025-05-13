@@ -25,7 +25,7 @@ fi
 ./init/python.sh
 ./init/ruby.sh
 
-./install.sh
+./install.sh --force
 
 echo "Run the following to complete setup:"
 if [[ "$SHELL" = */zsh ]]; then
