@@ -4,6 +4,7 @@ set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
 
+GOENV_ROOT="$HOME/.goenv"
 if [[ "$(uname -s)" == "Darwin" ]]; then
   HOMEBREW_PREFIX="/opt/homebrew"
   GOENV="$HOMEBREW_PREFIX/bin/goenv"
@@ -13,15 +14,13 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     exit
   fi
 else
-  GOENV="$HOME/.goenv/bin/goenv"
+  GOENV="$GOENV_ROOT/bin/goenv"
   if [[ ! -e "$GOENV" ]]; then
     echo "Installing goenv..."
     git clone https://github.com/go-nv/goenv.git "$HOME/.goenv"
     echo "goenv installed."
   fi
 fi
-GO="$HOME/.goenv/shims/go"
-
 
 if "$GOENV" version | cut -d ' ' -f 1 | egrep -q '[0-9]+\.[0-9]+\.[0-9]+'; then
   echo "Go already installed."
@@ -39,9 +38,9 @@ packages="
   golang.org/x/lint/golint@latest
   github.com/GoogleChrome/simplehttp2server@latest
 "
-export GOENV_GOPATH_PREFIX="$HOME/.go"
+GO="$GOENV_ROOT/shims/go"
 for pkg in $packages; do
-  if "$GO" list $pkg &> /dev/null; then
+  if GO111MODULE=off "$GO" list $pkg &> /dev/null; then
    echo ✓  $pkg
   else
     echo 📦  $pkg
