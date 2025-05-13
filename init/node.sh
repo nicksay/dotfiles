@@ -23,12 +23,12 @@ else
 fi
 
 echo "Setting up pnpm..."
-PNPM_HOME="$HOME/.local/share/pnpm"
-PATH="$PNPM_HOME:$PATH"
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 "$PNPM" setup
 
 echo "Installing node..."
-bash -i -c "\"$PNPM\" env use --global latest"
+bash -c "\"$PNPM\" env use --global latest"
 
 echo "Installing node packages..."
 packages="
