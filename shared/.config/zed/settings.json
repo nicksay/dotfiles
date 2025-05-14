@@ -7,39 +7,40 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+    "features": {
+        "edit_prediction_provider": "zed"
     },
-    "version": "2"
-  },
-  "edit_predictions": {
-    "disabled_globs": ["**/.env"]
-  },
-  "theme": "One Dark",
-  "buffer_font_size": 13,
-  "buffer_font_features": {
-    // Disable ligatures:
-    "calt": false
-  },
-  "wrap_guides": [80],
-  "languages": {
-    "Git Commit": {
-      "wrap_guides": [72]
+    "assistant": {
+        "default_model": {
+            "provider": "zed.dev",
+            "model": "claude-3-7-sonnet-latest"
+        },
+        "version": "2"
     },
-    "Go": {
-      "hard_tabs": true
+    "edit_predictions": {
+        "disabled_globs": ["**/.env"]
     },
-    "Markdown": {
-      "soft_wrap": "editor_width",
-      "remove_trailing_whitespace_on_save": false
+    "theme": "One Dark",
+    "buffer_font_size": 13,
+    "buffer_font_features": {
+        // Disable ligatures:
+        "calt": false
     },
-    "Plain Text": {
-      "hard_tabs": true
+    "tab_size": 4,
+    "wrap_guides": [80],
+    "languages": {
+        "Git Commit": {
+            "wrap_guides": [72]
+        },
+        "Go": {
+            "hard_tabs": true
+        },
+        "Markdown": {
+            "soft_wrap": "editor_width",
+            "remove_trailing_whitespace_on_save": false
+        },
+        "Plain Text": {
+            "hard_tabs": true
+        }
     }
-  }
 }
