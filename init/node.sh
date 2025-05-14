@@ -6,6 +6,7 @@ cd "$(dirname "$0")" # Run from the the script directory.
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   HOMEBREW_PREFIX="/opt/homebrew"
+  export PATH="$HOMEBREW_PREFIX/bin:$PATH"
   PNPM="$HOMEBREW_PREFIX/bin/pnpm"
   if [[ ! -e "$PNPM" ]]; then
     echo
