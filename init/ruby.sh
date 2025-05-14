@@ -6,6 +6,7 @@ cd "$(dirname "$0")" # Run from the the script directory.
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   HOMEBREW_PREFIX="/opt/homebrew"
+  export PATH="$HOMEBREW_PREFIX/bin:$PATH"
   RBENV="$HOMEBREW_PREFIX/bin/rbenv"
   if [[ ! -e "$RBENV" ]]; then
     echo
