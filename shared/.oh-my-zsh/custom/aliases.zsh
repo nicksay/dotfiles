@@ -192,21 +192,23 @@ function gr() {
 
 # SSH Convenience
 function check_ssh_agent() {
-  status="1"
+  agent_status="1"
   env_file="${SSH_ENV-$HOME/.ssh/environment-$(hostname)}"
   if [[ -r "$env_file" ]]; then
     source "$env_file" > /dev/null
     ps -p $SSH_AGENT_PID > /dev/null
-    status="$?"
+    agent_status="$?"
     if [[ "$1" != "-q" ]]; then
-      if [[ $status == 0 ]]; then
+      if [[ $agent_status == 0 ]]; then
         echo "SSH agent running as PID $SSH_AGENT_PID"
       else
         echo "SSH agent not running"
       fi
     fi
+  else
+    echo "SSH agent not running"
   fi
-  return $status
+  return $agent_status
 }
 function init_ssh_agent() {
   echo "Initialising new SSH agent..."
@@ -217,7 +219,8 @@ function init_ssh_agent() {
 }
 function add_ssh_keys() {
   # Use a wildcard path to also get names like github_rsa, etc.
-  for key in $HOME/.ssh/*[dr]sa; do
-    (ssh-add -L | grep -q $key) || ssh-add $key
+  setopt nullglob
+  for key in "$(ls $HOME/.ssh/*_[dr]sa $HOME/.ssh/*_ed25519)"; do
+    (ssh-add -L | grep -q "$key") || ssh-add "$key"
   done
 }
