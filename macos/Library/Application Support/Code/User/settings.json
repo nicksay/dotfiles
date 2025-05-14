@@ -33,7 +33,6 @@
   "python.languageServer": "Pylance",
   "python.linting.pylintEnabled": true,
   "python.pythonPath": "~/.pyenv/shims/python",
-  "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "Source Code Pro, Monaco, monospace",
   "terminal.integrated.fontSize": 13,
   "workbench.colorCustomizations": {

@@ -98,12 +98,6 @@ function _prompt_color() {
     *)            printf '\[\033[m\]';;
   esac
 }
-function _prompt_mark() {
-  if ! type -t iterm2_prompt_mark &> /dev/null; then
-    return
-  fi
-  printf '\[$(iterm2_prompt_mark)\]'
-}
 function prompt_customize() {
   local prompt_color=$1;
   case $TERM in
@@ -119,7 +113,7 @@ function prompt_customize() {
         # If using the bash-command-timer, then use a single-sided prompt.
         local dir_width="\$( echo \$(( COLUMNS - 1 - \$(_prompt_host | wc -c) - \$(_prompt_vcs | wc -c) )) )"
         local line1="${color_start}\$(_prompt_host) \$(_prompt_vcs)\$(_prompt_dir ${dir_width})${color_end}"
-        local line2="$(_prompt_mark)\$ "
+        local line2="\$ "
         PS1="${line1}\n${line2}"
       else
         local left_width="\$( echo \$(( COLUMNS - (COLUMNS / 3) )) )"
@@ -131,7 +125,7 @@ function prompt_customize() {
         local line1_right="\$(printf \"%*.*s\" $right_width $right_width \"$right_prompt_string\")"
         local line1="${color_start}${line1_left}${line1_right}${color_end}"
         # Line 2 handles input.
-        local line2="$(_prompt_mark)\$ "
+        local line2="\$ "
         PS1="\n${line1}\n${line2}"
       fi
       ;;

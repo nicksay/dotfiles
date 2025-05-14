@@ -106,7 +106,6 @@ packages="
   google-chrome
   google-cloud-sdk
   google-drive
-  iterm2
   mimestream
   notion-calendar
   podman-desktop
