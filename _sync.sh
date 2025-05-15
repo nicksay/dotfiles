@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 
 
 DRYRUN=0
-FORCE=0
+YES=0
 OSNAME="$(uname -s)"
 
 
@@ -64,7 +64,7 @@ function _main() {
   if (( $DRYRUN )); then
     echo "Dry run: commands will only be printed."
     echo
-  elif ! (( $FORCE )); then
+  elif ! (( $YES )); then
     echo "Installing may overwrite files; use --dry-run to see which ones."
     read -p "Do you want to continue? (y/N) " -n 1;
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -84,7 +84,7 @@ function _help() {
     Options:
       -h, --help:     Show this help
       -n, --dry-run:  Show what would have been done, but don't do it.
-      -f, --force:    Skip verfication before installing.
+      -y, --yes:      Skip verfication before installing.
   " | sed 's/^ \{4\}//'
 }
 
@@ -93,8 +93,8 @@ function _help() {
 while (( $# > 0 )); do
   if [[ "$1" == "-n" || "$1" == "--dry-run" ]]; then
     DRYRUN=1
-  elif [[ "$1" == "-f" || "$1" == "--force" ]]; then
-    FORCE=1
+  elif [[ "$1" == "-y" || "$1" == "--yes" ]]; then
+    YES=1
   elif [[ "$1" == "-h" || "$1" == "--help" ]]; then
     _help
     exit
