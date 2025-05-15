@@ -14,22 +14,12 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     fi
 fi
 
-./init/defaults.sh
-./init/shell.sh
-./init/brew.sh
-./init/apt.sh
-./init/term.sh
-./init/code.sh
-./init/go.sh
-./init/node.sh
-./init/python.sh
-./init/ruby.sh
-
-./install.sh --force
+./_init.sh
+./_sync.sh --yes
 
 echo "Run the following to complete setup:"
 if [[ "$SHELL" = */zsh ]]; then
-  echo source "\"$HOME/.zshrc\""
+  echo "    source \"$HOME/.zshrc\""
 elif [[ "$SHELL" = */bash ]]; then
-  echo source "\"$HOME/.bashrc\""
+  echo "    source \"$HOME/.bashrc\""
 fi
