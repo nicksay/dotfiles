@@ -18,17 +18,17 @@ echo "Installing code extensions..."
 extensions="
   acarreiro.calculate
   adammaras.overtype
-  BazelBuild.vscode-bazel
+  bazelbuild.vscode-bazel
   bibhasdn.unique-lines
   casualjim.gotemplate
   dbaeumer.vscode-eslint
   dmitry-korobchenko.prototxt
-  EditorConfig.EditorConfig
+  dnut.rewrap-revived
+  editorconfig.editorconfig
   eg2.tslint
   goessner.mdmath
   golang.go
-  GrapeCity.gc-excelviewer
-  joaompinto.vscode-graphviz
+  grapecity.gc-excelviewer
   kleber-swf.ocean-dark-extended
   llvm-vs-code-extensions.vscode-clangd
   maelvalais.autoconf
@@ -40,8 +40,9 @@ extensions="
   ms-vscode.cpptools
   ms-vscode.vscode-typescript-tslint-plugin
   redhat.java
-  stkb.rewrap
-  VisualStudioExptTeam.vscodeintellicode
+  stephanvs.dot
+  tintinweb.graphviz-interactive-preview
+  visualstudioexptteam.vscodeintellicode
   vscjava.vscode-java-debug
   vscjava.vscode-java-dependency
   vscjava.vscode-java-pack
