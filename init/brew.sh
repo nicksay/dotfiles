@@ -120,7 +120,7 @@ for pkg in $packages; do
     echo ✓  $pkg
   else
     echo 📦  $pkg
-    "$BREW" install --cask $pkg
+    "$BREW" install --adopt --cask $pkg
   fi
 done
 echo "Cask packages installed."
