@@ -7,7 +7,6 @@ cd "$(dirname "$0")" # Run from the the script directory.
 ./init/shell.sh
 ./init/brew.sh
 ./init/apt.sh
-./init/term.sh
 ./init/code.sh
 ./init/go.sh
 ./init/node.sh
