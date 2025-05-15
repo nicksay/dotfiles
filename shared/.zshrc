@@ -45,3 +45,7 @@ ZSH_DISABLE_COMPFIX=true
 source "$ZSH/oh-my-zsh.sh"
 
 ######################## end oh-my-zsh configuration ########################
+
+# Load any extra RC files.
+extra_rcs=( "$HOME"/.zshrc_*(N) )
+(( ${#extra_rcs} )) && source "$HOME"/.zshrc_*
