@@ -69,7 +69,7 @@ packages="
   rbenv
   rename
   ruby-build
-  rustup-init
+  rustup
   sqlite
   sqlite-utils
   subversion
