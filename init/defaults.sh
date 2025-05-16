@@ -5,9 +5,15 @@ cd "$(dirname "$0")" # Run from the the script directory.
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
     echo "Skipping defaults."
-    exit 0
+    exit
 fi
 
+echo "Ready to configure macOS defaults."
+echo "These include changes that will affect Dock, Finder, Spotlight, etc."
+read -p "Do you want to continue? (y/N) " -n 1;
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  exit
+fi
 
 echo
 echo "Setting defaults..."
