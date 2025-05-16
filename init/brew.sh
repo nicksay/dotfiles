@@ -54,8 +54,8 @@ packages="
   icdiff
   jq
   just
-  kubectl
   kubectx
+  kubernetes-cli
   lima
   libyaml
   marked
