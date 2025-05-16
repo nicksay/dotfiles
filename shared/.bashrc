@@ -179,3 +179,6 @@ fi
 
 # Set primary prompt
 prompt_customize yellow
+
+# Load any extra RC files.
+ls ~/.bashrc_* &>/dev/null && source "$HOME"/.bashrc_*
