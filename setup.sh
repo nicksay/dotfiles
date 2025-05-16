@@ -15,6 +15,13 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 ./_init.sh
+
+# Ensure path is updated for access to homebrew binaries.
+HOMEBREW_PREFIX="/opt/homebrew"
+if [[ -x $HOMEBREW_PREFIX/bin/brew ]]; then
+    eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+fi
+
 ./_sync.sh --yes
 
 echo "Run the following to complete setup:"
