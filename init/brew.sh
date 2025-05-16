@@ -45,7 +45,6 @@ packages="
   clang-format
   ctags
   gh
-  ghostty
   git
   git-filter-repo
   glab
@@ -75,7 +74,6 @@ packages="
   sqlite-utils
   svn
   yarn
-  zed
   zsh-completions
   zsh-history-substring-search
 "
@@ -107,6 +105,7 @@ packages="
   font-source-serif-4
   font-zed-mono
   font-zed-sans
+  ghostty
   google-chrome
   google-cloud-sdk
   google-drive
