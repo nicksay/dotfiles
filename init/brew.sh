@@ -77,7 +77,7 @@ packages="
   zsh-completions
   zsh-history-substring-search
 "
-installed=$("$BREW" list --formula)
+installed=$("$BREW" list -1 --formula)
 for pkg in $packages; do
   # Can't use -x to match full string because some packages might be listed
   # with version numbers (e.g. python@3.12).
@@ -118,7 +118,7 @@ packages="
   visual-studio-code
   zed
 "
-installed=$("$BREW" list --cask)
+installed=$("$BREW" list -1 --cask)
 for pkg in $packages; do
   if echo "$installed" | fgrep -q -x $pkg; then
     echo ✓  $pkg
