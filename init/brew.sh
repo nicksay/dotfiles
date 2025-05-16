@@ -68,6 +68,7 @@ packages="
   qemu
   rbenv
   rename
+  rsync
   ruby-build
   rustup
   sqlite
