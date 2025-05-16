@@ -72,7 +72,7 @@ packages="
   rustup-init
   sqlite
   sqlite-utils
-  svn
+  subversion
   yarn
   zsh-completions
   zsh-history-substring-search
