@@ -75,6 +75,7 @@ packages="
   sqlite-utils
   subversion
   yarn
+  yq
   zsh-completions
   zsh-history-substring-search
 "
