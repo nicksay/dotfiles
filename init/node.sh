@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash
 
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
@@ -28,7 +28,7 @@ export PATH="$PNPM_HOME:$PATH"
 "$PNPM" setup
 
 echo "Installing node..."
-bash -i -c "\"$PNPM\" env use --global latest"
+bash -c "\"$PNPM\" env use --global latest"
 
 echo "Installing node packages..."
 packages="
