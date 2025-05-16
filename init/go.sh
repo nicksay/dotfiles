@@ -39,8 +39,12 @@ packages="
   github.com/GoogleChrome/simplehttp2server@latest
 "
 GO="$GOENV_ROOT/shims/go"
+GOPATH="$HOME"/.go/$("$GOENV" version-name)
+installed=$("$GO" version -m "$GOPATH"/bin/* |
+            egrep "^[[:space:]]path" |
+            awk '{print $2}')
 for pkg in $packages; do
-  if GO111MODULE=off "$GO" list $pkg &> /dev/null; then
+  if echo "$installed" | fgrep -q -x ${pkg%@*}; then
    echo ✓  $pkg
   else
     echo 📦  $pkg
