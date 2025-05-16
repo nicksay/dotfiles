@@ -52,8 +52,9 @@ extensions="
   xaver.clang-format
   zxh404.vscode-proto3
 "
+installed=$("$CODE" --list-extensions)
 for ext in $extensions; do
-  if "$CODE" --list-extensions | egrep -q "^$ext\b"; then
+  if echo "$installed" | fgrep -q -x $ext; then
     echo ✓  $ext
   else
     echo 📦  $ext
