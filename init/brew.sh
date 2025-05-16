@@ -50,7 +50,6 @@ packages="
   glab
   goenv
   helm
-  hg
   hub
   icdiff
   jq
@@ -60,6 +59,7 @@ packages="
   lima
   libyaml
   marked
+  mercurial
   openjdk
   podman
   pnpm
