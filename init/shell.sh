@@ -11,7 +11,7 @@ if [[ "$(uname -s)" == "Linux" ]]; then
     echo "zsh found."
   else
     echo "Installing zsh..."
-    sudo apt install zsh
+    sudo NEEDRESTART_MODE=a apt install -y zsh
     echo "zsh installed."
   fi
 fi
