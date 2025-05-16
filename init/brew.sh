@@ -26,8 +26,9 @@ fi
 echo "Tapping homebrew repositories..."
 repositories="
 "
+tapped=$("$BREW" tap)
 for repo in $repositories; do
-  if "$BREW" tap | fgrep -q -x $repo; then
+  if echo "$tapped" | fgrep -q -x $repo; then
     echo ✓  $repo
   else
     echo 📦  $repo
@@ -78,8 +79,11 @@ packages="
   zsh-completions
   zsh-history-substring-search
 "
+installed=$("$BREW" list --formula)
 for pkg in $packages; do
-  if "$BREW" list $pkg &> /dev/null; then
+  # Can't use -x to match full string because some packages might be listed
+  # with version numbers (e.g. python@3.12).
+  if echo "$installed" | egrep -q "^$pkg\b"; then
     echo ✓  $pkg
   else
     echo 📦  $pkg
@@ -115,8 +119,9 @@ packages="
   visual-studio-code
   zed
 "
+installed=$("$BREW" list --cask)
 for pkg in $packages; do
-  if "$BREW" list --cask $pkg &> /dev/null; then
+  if echo "$installed" | fgrep -q -x $pkg; then
     echo ✓  $pkg
   else
     echo 📦  $pkg
