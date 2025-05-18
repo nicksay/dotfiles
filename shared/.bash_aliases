@@ -34,14 +34,15 @@ function _prompt_date() {
   date '+%b %d %Z'
 }
 function _prompt_host() {
-  local user_and_host="[\u@\h]"
-  if [[ $USER == "nicksay" ]]; then
-    user_and_host=${user_and_host//\\u@/}
+  # Only show user@hostname if connected via SSH.
+  local user_and_host=""
+  if [[ -n $SSH_CONNECTION ]]; then
+    if [[ -n $HOST ]]; then
+      echo "$USER@$HOST:" # HOST is a shorter `hostname` set in .bashrc
+    else
+      echo "$USER@$HOSTNAME:"
+    fi
   fi
-  if [[ -n $HOST ]]; then
-    user_and_host=${user_and_host//\\h/${HOST}}  ## set in .bashrc
-  fi
-  echo "$user_and_host"
 }
 function _prompt_dir() {
   local max=${1:-64}
@@ -111,8 +112,8 @@ function prompt_customize() {
       fi
       if type -t BCTPostCommand &> /dev/null; then
         # If using the bash-command-timer, then use a single-sided prompt.
-        local dir_width="\$( echo \$(( COLUMNS - 1 - \$(_prompt_host | wc -c) - \$(_prompt_vcs | wc -c) )) )"
-        local line1="${color_start}\$(_prompt_host) \$(_prompt_vcs)\$(_prompt_dir ${dir_width})${color_end}"
+        local dir_width="\$( echo \$(( COLUMNS - \$(_prompt_host | wc -c) - \$(_prompt_vcs | wc -c) )) )"
+        local line1="${color_start}\$(_prompt_host)\$(_prompt_vcs)\$(_prompt_dir ${dir_width})${color_end}"
         local line2="\$ "
         PS1="${line1}\n${line2}"
       else
