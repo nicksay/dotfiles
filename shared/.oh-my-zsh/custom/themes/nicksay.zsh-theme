@@ -59,9 +59,7 @@ _nicksay_prompt_info() {
   # Host: Only show user@hostname if connected via SSH.
   if [[ -n $SSH_CONNECTION ]]; then
     left+="%F{yellow}"
-    if [[ "$USER" != "nicksay" ]]; then
-      left+="%n@"  # %n = $USERNAME.
-    fi
+    left+="%n@"  # %n = $USERNAME.
     left+="%2m:" # %m = Hostname up to N components.
     left+="%f"
   fi
