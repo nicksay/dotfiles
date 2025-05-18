@@ -24,6 +24,8 @@ fi
 
 ./_sync.sh --yes
 
+./_config.sh
+
 echo "Run the following to complete setup:"
 if [[ "$SHELL" = */zsh ]]; then
   echo "    source \"$HOME/.zshrc\""
