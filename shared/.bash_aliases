@@ -103,7 +103,7 @@ function prompt_customize() {
   local prompt_color=$1;
   case $TERM in
     xterm* | screen* )
-      if [[ $TERM =~ "color" ]]; then
+      if [[ $TERM =~ "color" || $TERM =~ "ghostty" ]]; then
         local color_start="$(_prompt_color $prompt_color)"
         local color_end="$(_prompt_color)"
       fi
