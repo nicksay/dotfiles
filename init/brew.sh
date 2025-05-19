@@ -88,6 +88,18 @@ for pkg in $packages; do
   else
     echo 📦  $pkg
     "$BREW" install $pkg
+    # Some packages have extra post-install steps.
+    case $pkg in
+        openjdk)
+            echo "Symlinking openjdk for system Java wrappers to find..."
+            echo "> sudo ln -sfn " \
+                    "$HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk" \
+                    "/Library/Java/JavaVirtualMachines/openjdk.jdk"
+            sudo ln -sfn \
+                    "$HOMEBREW_PREFIX"/opt/openjdk/libexec/openjdk.jdk \
+                    /Library/Java/JavaVirtualMachines/openjdk.jdk
+            ;;
+    esac
   fi
 done
 echo "Homebrew packages installed."
