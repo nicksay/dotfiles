@@ -3,9 +3,11 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
+OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")
+
 
 GOENV_ROOT="$HOME/.goenv"
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if [[ "$OSNAME" == "darwin" ]]; then
   HOMEBREW_PREFIX="/opt/homebrew"
   GOENV="$HOMEBREW_PREFIX/bin/goenv"
   if [[ ! -e "$GOENV" ]]; then

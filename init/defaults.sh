@@ -3,7 +3,10 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
-if [[ "$(uname -s)" != "Darwin" ]]; then
+OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")
+
+
+if [[ "$OSNAME" != "darwin" ]]; then
     echo "Skipping defaults."
     exit
 fi

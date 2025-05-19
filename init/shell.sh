@@ -3,10 +3,13 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
+OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")
+
 BCT_SHELL="$HOME/.bash_command_timer.sh"
 OH_MY_ZSH="$HOME/.oh-my-zsh/oh-my-zsh.sh"
 
-if [[ "$(uname -s)" == "Linux" ]]; then
+
+if [[ "$OSNAME" == "linux" ]]; then
   if which zsh &> /dev/null; then
     echo "zsh found."
   else

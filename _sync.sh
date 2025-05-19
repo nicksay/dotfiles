@@ -5,7 +5,6 @@ set -e  # Stop on error.
 # Run from the the script directory.
 cd "$(dirname "$0")"
 
-
 DRYRUN=0
 YES=0
 OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")

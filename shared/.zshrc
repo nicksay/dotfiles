@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")
+
 HOMEBREW_PREFIX="/opt/homebrew"
 if [[ -x $HOMEBREW_PREFIX/bin/brew ]]; then
   eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
@@ -32,7 +34,7 @@ plugins=(
   zsh-completions
   zsh-history-substring-search
 )
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if [[ "$OSNAME" == "darwin" ]]; then
   plugins+=(
     one-password
   )

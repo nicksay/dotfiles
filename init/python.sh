@@ -3,8 +3,10 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
+OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")
 
-if [[ "$(uname -s)" == "Darwin" ]]; then
+
+if [[ "$OSNAME" == "darwin" ]]; then
   HOMEBREW_PREFIX="/opt/homebrew"
   PYENV="$HOMEBREW_PREFIX/bin/pyenv"
   if [[ ! -e "$PYENV" ]]; then

@@ -3,7 +3,10 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
-if [[ "$(uname -s)" != "Linux" ]]; then
+OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")
+
+
+if [[ "$OSNAME" != "linux" ]]; then
     echo "Skipping apt installation."
     exit 0
 fi

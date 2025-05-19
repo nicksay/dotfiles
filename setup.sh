@@ -3,8 +3,12 @@
 set -e  # Stop on error.
 cd "$(dirname "$0")" # Run from the the script directory.
 
+
+OSNAME=$(uname -s | tr "[:upper:]" "[:lower:]")
+
+
 # Sanity check.
-if [[ "$(uname -s)" == "Darwin" ]]; then
+if [[ "$OSNAME" == "darwin" ]]; then
     if xcode-select -p &> /dev/null; then
         true
     else
