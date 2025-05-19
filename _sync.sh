@@ -54,7 +54,7 @@ function _main() {
 
 function _help() {
     echo "
-    Install dotfiles
+    Copy dotfiles to home directory
 
     Options:
       -h, --help:     Show this help
