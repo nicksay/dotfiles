@@ -411,8 +411,8 @@ function init_ssh_agent() {
 }
 
 function add_ssh_keys() {
-  # Use a wildcard path to also get names like github_rsa, etc.
-  for key in $(ls "$HOME"/.ssh/*_[dr]sa "$HOME"/.ssh/*_ed25519 &>/dev/null); do
-      (ssh-add -L | grep -q "$key") || ssh-add "$key"
-  done
+    # Use a wildcard path to also get names like github_rsa, etc.
+    for key in "$(ls $HOME/.ssh/*_[dr]sa.pub $HOME/.ssh/*_ed25519.pub &> /dev/null)"; do
+        (ssh-add -L | fgrep -q "$(cat $key)") || ssh-add "${key%.pub}"
+    done
 }
