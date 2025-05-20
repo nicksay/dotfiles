@@ -21,7 +21,6 @@ function _rsync() {
 
 
 function _copy_dotfiles() {
-    echo "Copying dotfiles..."
     # Copy files into place.
     _rsync -avh --no-perms --chmod=ugo=rwX --mkpath \
         --exclude ".DS_Store" \
@@ -31,12 +30,12 @@ function _copy_dotfiles() {
             --exclude ".DS_Store" \
             "$PWD/$OSNAME/" "$HOME/";
     fi
-    echo "Dotfiles copied."
 }
 
 
 function _main() {
     echo
+    echo "Copying dotfiles..."
     if (( $DRYRUN )); then
         echo "Dry run: commands will only be printed."
         echo
@@ -49,6 +48,7 @@ function _main() {
         echo
     fi
     _copy_dotfiles
+    echo "Dotfiles copied."
 }
 
 
