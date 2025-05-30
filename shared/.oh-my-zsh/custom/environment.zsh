@@ -76,8 +76,11 @@ export PAGER="less -FJMRWXs -x4"
 export HOST="$(hostname | tr A-Z a-z | cut -d. -f1-2)"
 
 # Set the default editor.
-if [[ -n "SSH_CONNECTION" ]]; then
-    export EDITOR="nano"
+if which micro &> /dev/null; then
+    export EDITOR="micro"
 else
-    export EDITOR="zed -w"
+    export EDITOR="nano"
+fi
+if [[ -z "$SSH_CONNECTION" ]]; then
+    export VISUAL="zed -w"
 fi

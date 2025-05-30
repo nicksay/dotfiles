@@ -4,7 +4,15 @@
 alias ..='cd ..'
 alias cd..='cd ..'
 function mkcd() { mkdir -p "$1" && cd "$1"; }
-alias e='${${(z)EDITOR}[1]}'  # First word of the current $EDITOR value
+function e() {
+    if [[ -n "$VISUAL" ]]; then
+        # drop any args for $VISUAL when accessed by the "e" alias
+        ${VISUAL%% *} "$@"
+    else
+        # keep any args $EDITOR using "=" to expand spaces
+        ${=EDITOR} "$@"
+    fi
+}
 alias more='less'
 alias q='exit'
 alias sym='ln -s'

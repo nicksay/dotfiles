@@ -1,0 +1,8 @@
+{
+    "*.go": {
+        "tabstospaces": false
+    },
+    "colorscheme": "one-dark",
+    "rmtrailingws": true,
+    "tabstospaces": true
+}

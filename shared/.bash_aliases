@@ -8,7 +8,14 @@
 alias ..='cd ..'
 alias cd..='cd ..'
 function mkcd() { mkdir -p "$1" && cd "$1"; }
-alias e='code'
+function e() {
+    if [[ -n "$VISUAL" ]]; then
+        # drop any args for $VISUAL when accessed by the "e" alias
+        ${VISUAL%% *} "$@"
+    else
+        $EDITOR "$@"
+    fi
+}
 alias py='python'
 alias more='less'
 alias q='exit'
