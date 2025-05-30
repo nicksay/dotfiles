@@ -52,6 +52,7 @@ packages="
   git-filter-repo
   glab
   goenv
+  graphviz
   helm
   hub
   icdiff
@@ -63,6 +64,7 @@ packages="
   libyaml
   marked
   mercurial
+  micro
   openjdk
   podman
   pnpm
