@@ -40,6 +40,7 @@ packages="
   libtool-bin
   libyaml-dev
   llvm
+  micro
   netcat
   openjdk-11-jdk
   openssh-client
