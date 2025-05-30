@@ -46,6 +46,7 @@ packages="
   openssh-client
   openssl
   perl
+  podman
   protobuf-compiler
   python-is-python3
   python3-distutils
