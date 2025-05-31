@@ -11,3 +11,4 @@ window-height = 36
 window-width = 164
 
 macos-option-as-alt = left
+shell-integration-features = sudo
