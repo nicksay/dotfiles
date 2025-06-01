@@ -21,10 +21,10 @@
         "disabled_globs": ["**/.env"]
     },
     "theme": "One Dark",
+    "buffer_font_family": "BlexMono Nerd Font",
     "buffer_font_size": 13,
     "buffer_font_features": {
-        // Disable ligatures:
-        "calt": false
+        "calt": false // Disable ligatures
     },
     "tab_size": 4,
     "wrap_guides": [80],
