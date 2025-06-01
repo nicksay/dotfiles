@@ -1,9 +1,5 @@
 font-size = 13
-font-family = "Zed Mono"
-font-style = "Extended"
-font-style-bold = "Bold Extended"
-font-style-italic = "Extended Italic"
-font-style-bold-italic = "Bold Extended Italic"
+font-family = "BlexMono Nerd Font Mono"
 
 theme = "SpaceGray Bright"
 
