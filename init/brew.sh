@@ -113,6 +113,7 @@ echo "Homebrew packages installed."
 echo "Installing cask packages..."
 packages="
   firefox
+  font-blex-mono-nerd-font
   font-inter
   font-inter-tight
   font-noto-mono
@@ -123,6 +124,7 @@ packages="
   font-source-sans-3
   font-source-serif-4
   font-zed-mono
+  font-zed-mono-nerd-font
   font-zed-sans
   ghostty
   google-chrome
