@@ -22,14 +22,14 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' use-simple true
 zstyle ':vcs_info:*' max-exports 2
 # stagedstr: Used in %c if there are staged changes.
-zstyle ':vcs_info:*' stagedstr '*'
+zstyle ':vcs_info:*' stagedstr "%F{green}󰦒%f"
 # unstagedstr: Used in %u if there are unstaged changes.
-zstyle ':vcs_info:*' unstagedstr '*'
+zstyle ':vcs_info:*' unstagedstr '%F{red}󱈸%f'
 # formats: A list of formats, populated to vcs_info_msg_0_, ... vcs_info_msg_N_.
-zstyle ':vcs_info:*' formats "$FX[bold]%r$FX[no-bold]/%S" "%b%u%c"
+zstyle ':vcs_info:*' formats "$FX[bold]:%r$FX[no-bold]/%S" ":%b %u%c"
 # actionformats: A list of formats used if there is a special action going on
 # in your current repository; like an interactive rebase or a merge conflict.
-zstyle ':vcs_info:*' actionformats "$FX[bold]%r$FX[no-bold]/%S" "%b%u%c (%a)"
+zstyle ':vcs_info:*' actionformats "$FX[bold]:%r$FX[no-bold]/%S" ":%b %u%c (%a)"
 # nvcsformats: A list of formats used if there's no detected version control
 # sytem or if vcs_info was disabled.
 zstyle ':vcs_info:*' nvcsformats "%~" ""
@@ -60,7 +60,7 @@ _nicksay_prompt_info() {
   if [[ -n $SSH_CONNECTION ]]; then
     left+="%F{yellow}"
     left+="%n@"  # %n = $USERNAME.
-    left+="%2m:" # %m = Hostname up to N components.
+    left+="%2m " # %m = Hostname up to N components.
     left+="%f"
   fi
   # VCS Repo and Directory (see vcs_info formats)
@@ -68,9 +68,12 @@ _nicksay_prompt_info() {
   left+="${vcs_info_msg_0_%%/.}"
   # VCS Branch and Status (see vcs_info formats)
   if [[ -n $vcs_info_msg_1_ ]]; then
-    left+="%F{8}"
-    left+=$' \uE0A0'  # 
-    left+="$vcs_info_msg_1_"
+    if (( $(echotc Co) >= 256 )); then
+        left+="%F{247}"  # light grey, if supported
+    else
+        left+="%F{default}"
+    fi
+    left+=" $vcs_info_msg_1_"
   fi
   left+="%f"
   # Print the left prompt info
@@ -84,7 +87,11 @@ _nicksay_prompt_info() {
     right+="%f"
   fi
   # Date/Time
-  right+="%F{8}"
+  if (( $(echotc Co) >= 256 )); then
+      right+="%F{247}"  # light grey, if supported
+  else
+      right+="%F{default}"
+  fi
   right+="[%T]"  # %T = Current time of day, in 24-hour format.
   right+="%f"
   # Print the right prompt info
@@ -114,7 +121,7 @@ add-zsh-hook precmd _nicksay_prompt_precmd
 _nicksay_prompt_1() {
   local line=""
   line+="%(?.$FX[bold]%F{green}.$FX[bold]%F{red})"
-  line+=$'\u276F'  # ❯
+  line+="❯"
   line+="$FX[no-bold]%f"
   line+=" "
   print "$line"
