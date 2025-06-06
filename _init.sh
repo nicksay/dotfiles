@@ -12,3 +12,4 @@ cd "$(dirname "$0")" # Run from the the script directory.
 ./init/node.sh
 ./init/python.sh
 ./init/ruby.sh
+./init/rust.sh
