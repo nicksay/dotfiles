@@ -47,6 +47,7 @@ packages="
   buildifier
   clang-format
   ctags
+  firebase-cli
   gh
   git
   git-filter-repo
@@ -66,6 +67,7 @@ packages="
   mercurial
   micro
   openjdk
+  optipng
   podman
   pnpm
   pyenv
@@ -79,6 +81,7 @@ packages="
   sqlite
   sqlite-utils
   subversion
+  tree
   yarn
   yq
   zsh-completions
@@ -132,6 +135,7 @@ packages="
   google-drive
   mimestream
   notion-calendar
+  obsidian
   podman-desktop
   slack
   signal
