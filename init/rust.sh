@@ -30,3 +30,22 @@ else
     $RUSTUP_INIT -y --no-modify-path
     echo "Rust installed."
 fi
+
+
+echo "Installing Rust commands..."
+packages="
+    cargo-machete
+    checkexec
+    watchexec-cli
+"
+CARGO="$HOME/.cargo/bin/cargo"
+installed=$("$CARGO" install --list | fgrep : | awk '{print $1}')
+for pkg in $packages; do
+  if echo "$installed" | fgrep -q -x ${pkg%@*}; then
+   echo ✓  $pkg
+  else
+    echo 📦  $pkg
+    "$CARGO" install $pkg
+  fi
+done
+echo "Rust commands installed."
