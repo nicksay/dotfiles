@@ -26,6 +26,13 @@ echo "Setting defaults..."
 sudo -v
 
 
+# Allow TouchID for sudo.
+if [ -f /etc/pam.d/sudo_local.template ]; then
+    sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template \
+        | sudo tee /etc/pam.d/sudo_local
+fi
+
+
 # Kill normal apps before setting defaults so values aren't overwritten.
 killall "App Store" "System Preferences" &> /dev/null || true
 
