@@ -11,13 +11,14 @@
         "edit_prediction_provider": "zed"
     },
     "agent": {
+        "play_sound_when_agent_done": true,
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-3-7-sonnet-latest"
-        },
-        "version": "2"
+            "model": "claude-sonnet-4"
+        }
     },
     "edit_predictions": {
+        "mode": "subtle",
         "disabled_globs": ["**/.env"]
     },
     "theme": "One Dark",
