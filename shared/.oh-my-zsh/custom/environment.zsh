@@ -78,6 +78,9 @@ export HOST="$(hostname | tr A-Z a-z | cut -d. -f1-2)"
 # Set the default editor.
 if which micro &> /dev/null; then
     export EDITOR="micro"
+    if [[ "$COLORTERM" == "truecolor" ]]; then
+        export MICRO_TRUECOLOR=1
+    fi
 else
     export EDITOR="nano"
 fi
