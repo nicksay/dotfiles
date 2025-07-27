@@ -1,0 +1,58 @@
+# Theme: SpaceGray Bright
+# Author: Alex Nicksay
+# ----------------------------------
+# Derived from the SpaceGray Bright Zed theme.
+
+# --- Core UI Elements ---
+color-link default "#f3f3f3,#2a2e3a"
+color-link selection "#000000,#cacaca"
+color-link cursor-line "#2f3441"
+color-link line-number "#76787f"
+color-link current-line-number "#d8d8d8"
+color-link color-column "#383d4d"
+color-link indent-char "#383d4d"
+color-link divider "#383d4d"
+
+# --- Status & Message Bars ---
+color-link statusline "#d8d8d8,#22262f"
+color-link statusline.inactive "#76787f,#22262f"
+color-link message "#7baec1,#2a2e3a"
+color-link error-message "#f3f3f3,#bc5553"
+
+# --- Tabs ---
+color-link tabbar "#d8d8d8,#22262f"
+color-link tabbar.active "bold #f3f3f3,#2f3441"
+color-link tab-error "#bc5553,#22262f"
+
+# --- Syntax Highlighting ---
+color-link comment "italic #76787f"
+color-link constant "#f6c987"
+color-link constant.number "#f6c987"
+color-link constant.string "#a0b56c"
+color-link constant.bool "#f6c987"
+color-link identifier "#bc5553"
+# Note: 'identifier.class' is also used for functions.
+color-link identifier.class "#7baec1"
+color-link identifier.var "#bc5553"
+color-link statement "#b98aae"
+color-link symbol.operator "#f3f3f3"
+color-link symbol.brackets "#d8d8d8"
+color-link preproc "#85c9b8"
+color-link type "#f6c987"
+color-link type.keyword "#b98aae"
+color-link special "#b98aae"
+color-link underlined "underline #7baec1"
+color-link error "bold #bc5553"
+color-link todo "bold #b98aae"
+
+# --- Gutters & Diffs ---
+color-link diff-added "#a0b56c"
+color-link diff-modified "#f6c987"
+color-link diff-deleted "#bc5553"
+color-link gutter-error "#bc5553"
+color-link gutter-warning "#f6c987"
+color-link gutter-info "#7baec1"
+
+# --- Other ---
+color-link hlsearch "#2a2e3a,#b98aae"
+color-link match-brace ",#383d4d"

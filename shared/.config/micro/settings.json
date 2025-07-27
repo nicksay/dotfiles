@@ -2,7 +2,9 @@
     "*.go": {
         "tabstospaces": false
     },
-    "colorscheme": "one-dark",
+    "colorscheme": "spacegray-bright",
+    "colorcolumn": 80,
+    "fakecursor": true,
     "rmtrailingws": true,
     "tabstospaces": true
 }
