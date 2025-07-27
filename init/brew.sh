@@ -119,6 +119,7 @@ packages="
   font-blex-mono-nerd-font
   font-inter
   font-inter-tight
+  font-meslo-lg-nerd-font
   font-noto-mono
   font-noto-sans
   font-noto-sans-mono
