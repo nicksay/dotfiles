@@ -66,6 +66,7 @@ packages="
   marked
   mercurial
   micro
+  miniserve
   openjdk
   optipng
   podman
@@ -130,9 +131,9 @@ packages="
   font-zed-mono
   font-zed-mono-nerd-font
   font-zed-sans
+  gcloud-cli
   ghostty
   google-chrome
-  google-cloud-sdk
   google-drive
   mimestream
   notion-calendar
