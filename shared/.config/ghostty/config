@@ -1,5 +1,5 @@
 font-size = 13
-font-family = "BlexMono Nerd Font"
+font-family = "MesloLGS Nerd Font Mono"
 font-feature = "-calt"  # disable ligatures
 
 theme = "SpaceGray Bright"
