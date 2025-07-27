@@ -22,7 +22,7 @@
         "disabled_globs": ["**/.env"]
     },
     "theme": "One Dark",
-    "buffer_font_family": "BlexMono Nerd Font",
+    "buffer_font_family": "MesloLGS Nerd Font Mono",
     "buffer_font_size": 13,
     "buffer_font_features": {
         "calt": false // Disable ligatures
